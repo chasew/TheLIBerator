@@ -3,7 +3,7 @@
 //  The Liberator
 //
 //  Created by Chase Wooten on 4/22/19.
-//  Copyright © 2019 Chase Wooten. All rights reserved.
+//  Copyright © 2019 Chase Wooten and Allison Wei. All rights reserved.
 //
 
 import UIKit
