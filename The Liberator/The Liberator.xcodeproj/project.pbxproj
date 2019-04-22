@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C88226E68E600C170E4 /* AppDelegate.swift */; };
+		D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C8A226E68E600C170E4 /* ViewController.swift */; };
+		D3DE1C8E226E68E600C170E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE1C8C226E68E600C170E4 /* Main.storyboard */; };
+		D3DE1C90226E68E700C170E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DE1C8F226E68E700C170E4 /* Assets.xcassets */; };
+		D3DE1C93226E68E700C170E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE1C91226E68E700C170E4 /* LaunchScreen.storyboard */; };
+		D3DE1C9E226E68E700C170E4 /* The_LiberatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C9D226E68E700C170E4 /* The_LiberatorTests.swift */; };
+		D3DE1CA9226E68E700C170E4 /* The_LiberatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1CA8226E68E700C170E4 /* The_LiberatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3DE1C9A226E68E700C170E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DE1C7D226E68E600C170E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DE1C84226E68E600C170E4;
+			remoteInfo = "The Liberator";
+		};
+		D3DE1CA5226E68E700C170E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DE1C7D226E68E600C170E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DE1C84226E68E600C170E4;
+			remoteInfo = "The Liberator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3DE1C85226E68E600C170E4 /* The Liberator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Liberator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DE1C88226E68E600C170E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3DE1C8A226E68E600C170E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3DE1C8D226E68E600C170E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3DE1C8F226E68E700C170E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3DE1C92226E68E700C170E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3DE1C94226E68E700C170E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DE1C99226E68E700C170E4 /* The LiberatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The LiberatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DE1C9D226E68E700C170E4 /* The_LiberatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_LiberatorTests.swift; sourceTree = "<group>"; };
+		D3DE1C9F226E68E700C170E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DE1CA4226E68E700C170E4 /* The LiberatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The LiberatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DE1CA8226E68E700C170E4 /* The_LiberatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_LiberatorUITests.swift; sourceTree = "<group>"; };
+		D3DE1CAA226E68E700C170E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3DE1C82226E68E600C170E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1C96226E68E700C170E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1CA1226E68E700C170E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3DE1C7C226E68E600C170E4 = {
+			isa = PBXGroup;
+			children = (
+				D3DE1C87226E68E600C170E4 /* The Liberator */,
+				D3DE1C9C226E68E700C170E4 /* The LiberatorTests */,
+				D3DE1CA7226E68E700C170E4 /* The LiberatorUITests */,
+				D3DE1C86226E68E600C170E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3DE1C86226E68E600C170E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3DE1C85226E68E600C170E4 /* The Liberator.app */,
+				D3DE1C99226E68E700C170E4 /* The LiberatorTests.xctest */,
+				D3DE1CA4226E68E700C170E4 /* The LiberatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3DE1C87226E68E600C170E4 /* The Liberator */ = {
+			isa = PBXGroup;
+			children = (
+				D3DE1C88226E68E600C170E4 /* AppDelegate.swift */,
+				D3DE1C8A226E68E600C170E4 /* ViewController.swift */,
+				D3DE1C8C226E68E600C170E4 /* Main.storyboard */,
+				D3DE1C8F226E68E700C170E4 /* Assets.xcassets */,
+				D3DE1C91226E68E700C170E4 /* LaunchScreen.storyboard */,
+				D3DE1C94226E68E700C170E4 /* Info.plist */,
+			);
+			path = "The Liberator";
+			sourceTree = "<group>";
+		};
+		D3DE1C9C226E68E700C170E4 /* The LiberatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3DE1C9D226E68E700C170E4 /* The_LiberatorTests.swift */,
+				D3DE1C9F226E68E700C170E4 /* Info.plist */,
+			);
+			path = "The LiberatorTests";
+			sourceTree = "<group>";
+		};
+		D3DE1CA7226E68E700C170E4 /* The LiberatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3DE1CA8226E68E700C170E4 /* The_LiberatorUITests.swift */,
+				D3DE1CAA226E68E700C170E4 /* Info.plist */,
+			);
+			path = "The LiberatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3DE1C84226E68E600C170E4 /* The Liberator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DE1CAD226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The Liberator" */;
+			buildPhases = (
+				D3DE1C81226E68E600C170E4 /* Sources */,
+				D3DE1C82226E68E600C170E4 /* Frameworks */,
+				D3DE1C83226E68E600C170E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Liberator";
+			productName = "The Liberator";
+			productReference = D3DE1C85226E68E600C170E4 /* The Liberator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3DE1C98226E68E700C170E4 /* The LiberatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DE1CB0226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The LiberatorTests" */;
+			buildPhases = (
+				D3DE1C95226E68E700C170E4 /* Sources */,
+				D3DE1C96226E68E700C170E4 /* Frameworks */,
+				D3DE1C97226E68E700C170E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3DE1C9B226E68E700C170E4 /* PBXTargetDependency */,
+			);
+			name = "The LiberatorTests";
+			productName = "The LiberatorTests";
+			productReference = D3DE1C99226E68E700C170E4 /* The LiberatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3DE1CA3226E68E700C170E4 /* The LiberatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DE1CB3226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The LiberatorUITests" */;
+			buildPhases = (
+				D3DE1CA0226E68E700C170E4 /* Sources */,
+				D3DE1CA1226E68E700C170E4 /* Frameworks */,
+				D3DE1CA2226E68E700C170E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3DE1CA6226E68E700C170E4 /* PBXTargetDependency */,
+			);
+			name = "The LiberatorUITests";
+			productName = "The LiberatorUITests";
+			productReference = D3DE1CA4226E68E700C170E4 /* The LiberatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3DE1C7D226E68E600C170E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Chase Wooten";
+				TargetAttributes = {
+					D3DE1C84226E68E600C170E4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					D3DE1C98226E68E700C170E4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D3DE1C84226E68E600C170E4;
+					};
+					D3DE1CA3226E68E700C170E4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D3DE1C84226E68E600C170E4;
+					};
+				};
+			};
+			buildConfigurationList = D3DE1C80226E68E600C170E4 /* Build configuration list for PBXProject "The Liberator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3DE1C7C226E68E600C170E4;
+			productRefGroup = D3DE1C86226E68E600C170E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3DE1C84226E68E600C170E4 /* The Liberator */,
+				D3DE1C98226E68E700C170E4 /* The LiberatorTests */,
+				D3DE1CA3226E68E700C170E4 /* The LiberatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3DE1C83226E68E600C170E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DE1C93226E68E700C170E4 /* LaunchScreen.storyboard in Resources */,
+				D3DE1C90226E68E700C170E4 /* Assets.xcassets in Resources */,
+				D3DE1C8E226E68E600C170E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1C97226E68E700C170E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1CA2226E68E700C170E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3DE1C81226E68E600C170E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */,
+				D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1C95226E68E700C170E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DE1C9E226E68E700C170E4 /* The_LiberatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DE1CA0226E68E700C170E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DE1CA9226E68E700C170E4 /* The_LiberatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3DE1C9B226E68E700C170E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DE1C84226E68E600C170E4 /* The Liberator */;
+			targetProxy = D3DE1C9A226E68E700C170E4 /* PBXContainerItemProxy */;
+		};
+		D3DE1CA6226E68E700C170E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DE1C84226E68E600C170E4 /* The Liberator */;
+			targetProxy = D3DE1CA5226E68E700C170E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3DE1C8C226E68E600C170E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3DE1C8D226E68E600C170E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3DE1C91226E68E700C170E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3DE1C92226E68E700C170E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3DE1CAB226E68E700C170E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D3DE1CAC226E68E700C170E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3DE1CAE226E68E700C170E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The Liberator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-Liberator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3DE1CAF226E68E700C170E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The Liberator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-Liberator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D3DE1CB1226E68E700C170E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The LiberatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-LiberatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Liberator.app/The Liberator";
+			};
+			name = Debug;
+		};
+		D3DE1CB2226E68E700C170E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The LiberatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-LiberatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Liberator.app/The Liberator";
+			};
+			name = Release;
+		};
+		D3DE1CB4226E68E700C170E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The LiberatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-LiberatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Liberator";
+			};
+			name = Debug;
+		};
+		D3DE1CB5226E68E700C170E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "The LiberatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "project1-436.The-LiberatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Liberator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3DE1C80226E68E600C170E4 /* Build configuration list for PBXProject "The Liberator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DE1CAB226E68E700C170E4 /* Debug */,
+				D3DE1CAC226E68E700C170E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DE1CAD226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The Liberator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DE1CAE226E68E700C170E4 /* Debug */,
+				D3DE1CAF226E68E700C170E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DE1CB0226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The LiberatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DE1CB1226E68E700C170E4 /* Debug */,
+				D3DE1CB2226E68E700C170E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DE1CB3226E68E700C170E4 /* Build configuration list for PBXNativeTarget "The LiberatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DE1CB4226E68E700C170E4 /* Debug */,
+				D3DE1CB5226E68E700C170E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3DE1C7D226E68E600C170E4 /* Project object */;
+}
