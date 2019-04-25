@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40501AC122712F3300686B8B /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC022712F3300686B8B /* CategoriesViewController.swift */; };
+		40501AC3227149F700686B8B /* CreateLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC2227149F700686B8B /* CreateLibViewController.swift */; };
 		D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C88226E68E600C170E4 /* AppDelegate.swift */; };
 		D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C8A226E68E600C170E4 /* ViewController.swift */; };
 		D3DE1C8E226E68E600C170E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE1C8C226E68E600C170E4 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40501AC022712F3300686B8B /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		40501AC2227149F700686B8B /* CreateLibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLibViewController.swift; sourceTree = "<group>"; };
 		D3DE1C85226E68E600C170E4 /* The Liberator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Liberator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DE1C88226E68E600C170E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DE1C8A226E68E600C170E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				D3DE1C88226E68E600C170E4 /* AppDelegate.swift */,
 				D3DE1C8A226E68E600C170E4 /* ViewController.swift */,
 				D3DE1C8C226E68E600C170E4 /* Main.storyboard */,
+				40501AC2227149F700686B8B /* CreateLibViewController.swift */,
+				40501AC022712F3300686B8B /* CategoriesViewController.swift */,
 				D3DE1C8F226E68E700C170E4 /* Assets.xcassets */,
 				D3DE1C91226E68E700C170E4 /* LaunchScreen.storyboard */,
 				D3DE1C94226E68E700C170E4 /* Info.plist */,
@@ -258,6 +264,8 @@
 			files = (
 				D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */,
 				D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */,
+				40501AC3227149F700686B8B /* CreateLibViewController.swift in Sources */,
+				40501AC122712F3300686B8B /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
