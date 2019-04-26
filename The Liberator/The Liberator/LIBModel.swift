@@ -11,7 +11,8 @@ import Foundation
 class madlib {
     
     var title : String
-    var theWholeAssString : String
+    var titleLength : Int
+    var theWholeString : String
     var words : [String]
     
     //index -> (filled?, type, text)
@@ -26,25 +27,25 @@ class madlib {
         
         var lines = [String]() //this is literally to extract the title
         words = [String]()
-        theWholeAssString = "that's it that's the project"
+        theWholeString = "that's it that's the project"
         blanks = [Int:(Bool,String,String)]()
         blankTypes = [String]()
         
         do {
             if let path = Bundle.main.path(forResource: fileName, ofType: "txt"){
-                theWholeAssString = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
-                words = theWholeAssString.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
-                lines = theWholeAssString.components(separatedBy: NSCharacterSet.newlines)
+                theWholeString = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                words = theWholeString.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
+                lines = theWholeString.components(separatedBy: NSCharacterSet.newlines)
             }
         } catch _ as NSError {
             print("F")
         }
         
         do {
-            let regex = try NSRegularExpression(pattern: "<[A-Z ]+> ")
-            let nsString = theWholeAssString as NSString
-            let results = regex.matches(in: theWholeAssString, range: NSRange(location: 0, length: nsString.length))
-            blankTypes = results.map { nsString.substring(with: $0.range)}
+            let regex = try NSRegularExpression(pattern: "<[A-Z ]+>")
+            let nsString = theWholeString as NSString
+            let results = regex.matches(in: theWholeString, range: NSRange(location: 0, length: nsString.length))
+            blankTypes = results.map {nsString.substring(with: $0.range)}
         } catch {
             print("F, part 2")
         }
@@ -64,6 +65,7 @@ class madlib {
         }
         
         title = lines[0]
+        titleLength = title.components(separatedBy: NSCharacterSet.whitespacesAndNewlines).count
         completed = false
         print(title)
         print(blanks)
@@ -82,6 +84,10 @@ class madlib {
         return blanks[pos]?.1 ?? "something went wrong"
     }
     
+    func getNumBlanks() -> Int {
+        return blanks.count
+    }
+    
     func isComplete() -> Bool {
         for i in 0..<blanks.count{
             if(blanks[i]!.0 == false){
@@ -91,8 +97,24 @@ class madlib {
         return true
     }
     
+    //hey, this is rough, but it works, so it's ok
     func getFullText() -> String{
-        return "lol, do it"
+        var blankIndex = 0;
+        for i in 0..<words.count {
+            if words[i].hasPrefix("<"){
+                words[i] = (blanks[blankIndex]?.2)!
+                blankIndex += 1 
+            }
+        }
+        var completeString = "";
+        for i in titleLength..<words.count{
+            if(words[i] == "." || words[i] == ";" || words[i] == "!" || words[i] == ","){
+                completeString += words[i]
+            } else {
+                completeString += " " + words[i]
+            }
+        }
+        return completeString
     }
 }
 
