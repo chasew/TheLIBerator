@@ -8,23 +8,68 @@
 
 import UIKit
 
-class CreateLibViewController: UIViewController {
+class InputCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var inputType: UILabel!
+    @IBOutlet weak var inputField: UITextField!
+    @IBAction func inputAction(_ sender: Any) {
+        inputField.becomeFirstResponder()
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}
 
+class CreateLibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    //will be passed via Catagory Selection Screen so should always exist
+    var libFileName : String?
+    var lib : madlib?
+
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let file = libFileName {
+            lib = madlib(fileName: file)
+        }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int{
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lib!.getNumBlanks()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InputCell", for: indexPath) as! InputCell
+        cell.inputType.text = lib?.getTypeOfPosition(pos: indexPath.item)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.item)
+        let cell = tableView.cellForRow(at: indexPath) as! InputCell
+        cell.inputField.becomeFirstResponder()
+    }
+    
 
 }

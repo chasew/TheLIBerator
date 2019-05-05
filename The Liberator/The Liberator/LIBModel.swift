@@ -85,7 +85,7 @@ class madlib {
     }
     
     func getNumBlanks() -> Int {
-        return blanks.count
+        return blankTypes.count
     }
     
     func isComplete() -> Bool {

@@ -13,7 +13,9 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let catagories = ["Cata 1", "Cata 2", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
+    var selected = String()
+    
+    let catagories = ["christmashehe", "christmasLib", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
     
     let catagoryImages: [UIImage] = [
         UIImage(named: "holidaze")!,
@@ -38,20 +40,23 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CatagoryCell
         cell.catagoryLabel.text = catagories[indexPath.item]
         cell.catagoryImage.image = catagoryImages[indexPath.item]
-        
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        
         return cell
     }
     
-    @objc func tap(_ sender: UITapGestureRecognizer) {
-        
-        let location = sender.location(in: self.collectionView)
-        let indexPath = self.collectionView.indexPathForItem(at: location)
-        
-        if let item = indexPath?.item {
-            print("\(catagories[item])")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        //selected is a catagory
+        selected = catagories[indexPath.item]
+        self.performSegue(withIdentifier: "toCreate", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreate" {
+            if let destinationVC = segue.destination as? CreateLibViewController {
+                //change this as such to give it a file name after you know what is selected,,,
+                destinationVC.libFileName = selected
+            }
         }
     }
+    
 
 }
