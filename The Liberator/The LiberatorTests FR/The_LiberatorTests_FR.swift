@@ -1,15 +1,14 @@
 //
-//  The_LiberatorTests.swift
-//  The LiberatorTests
+//  The_LiberatorTests_FR.swift
+//  The LiberatorTests FR
 //
-//  Created by Chase Wooten on 4/22/19.
+//  Created by Allison Wei on 4/25/19.
 //  Copyright © 2019 Chase Wooten. All rights reserved.
 //
 
 import XCTest
-@testable import The_Liberator
 
-class The_LiberatorTests: XCTestCase {
+class The_LiberatorTests_FR: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,14 +18,8 @@ class The_LiberatorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testDoTheThing() {
+    func testMadLibInit() {
         var lib = madlib(fileName: "christmasLib")
-        XCTAssertEqual(19, lib.getNumBlanks())
-        for i in 0...18 {
-            lib.fillBlank(position: i, text: "[\(i)th rando word]")
-        }
-        print(lib.getFullText())
-
     }
 
     func testPerformanceExample() {

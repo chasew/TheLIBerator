@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The LiberatorTests/LIBmodel.swift"
+            timestampString = "577917209.121083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The LiberatorTests/LIBmodel.swift"
+            timestampString = "577917209.1216331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Liberator.madlib.__allocating_init(fileName: Swift.String) -&gt; The_Liberator.madlib"
+                  moduleName = "The Liberator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20LiberatorTests/LIBmodel.swift"
+                  timestampString = "577860991.705573"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Liberator.madlib.init(fileName: Swift.String) -&gt; The_Liberator.madlib"
+                  moduleName = "The Liberator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20LiberatorTests/LIBmodel.swift"
+                  timestampString = "577860991.710258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "83">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Liberator/LIBModel.swift"
+            timestampString = "578007195.409451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "init(fileName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Liberator.madlib.init(fileName: Swift.String) -&gt; The_Liberator.madlib"
+                  moduleName = "The Liberator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578006891.41739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "3477">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_LiberatorTests.madlib.init(fileName: Swift.String) -&gt; The_LiberatorTests.madlib"
+                  moduleName = "The LiberatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578006894.432317"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "3477">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Liberator/LIBModel.swift"
+            timestampString = "578007195.409614"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "getFullText()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Liberator.madlib.getFullText() -&gt; Swift.String"
+                  moduleName = "The Liberator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578006891.426193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "418">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_LiberatorTests.madlib.getFullText() -&gt; Swift.String"
+                  moduleName = "The LiberatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578006894.437096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "418">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

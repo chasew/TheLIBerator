@@ -9,39 +9,49 @@
 import Foundation
 import UIKit
 
-class customCell: UICollectionViewCell {
+class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-}
-class CategoriesViewController: UICollectionViewController {
+    let catagories = ["Cata 1", "Cata 2", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
     
+    let catagoryImages: [UIImage] = [
+        UIImage(named: "holidaze")!,
+        UIImage(named: "holidaze")!,
+        UIImage(named: "holidaze")!,
+        UIImage(named: "holidaze")!,
+        UIImage(named: "holidaze")!,
+        UIImage(named: "holidaze")!
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap(sender:)))
-        tap.numberOfTapsRequired = 1
-        tap.numberOfTouchesRequired = 1
-        tap.delegate = (self as! UIGestureRecognizerDelegate)
-        collectionView?.addGestureRecognizer(tap)
     }
     
-    @IBOutlet weak var categories: UICollectionView!
-    @IBOutlet weak var backButton: UIButton!
-    let reuseIdentifier = "customCell"
-    
-    @objc func didTap(sender: UITapGestureRecognizer) {
-        // go to the madlib after tapped
-        // not really sure how to do this part I guess it would have to call the model where it decides which madlab to choose based on the category?
-        print("tapped")
-    }
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return catagories.count 
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CatagoryCell
+        cell.catagoryLabel.text = catagories[indexPath.item]
+        cell.catagoryImage.image = catagoryImages[indexPath.item]
+        
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        
         return cell
     }
+    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        
+        if let item = indexPath?.item {
+            print("\(catagories[item])")
+        }
+    }
+
 }
