@@ -30,6 +30,14 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"YellowBG")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "YellowBG")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

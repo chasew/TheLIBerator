@@ -18,34 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-dG-gio">
-                                <rect key="frame" x="138" y="400" width="99" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Progress"/>
-                                <connections>
-                                    <segue destination="IfI-iC-q02" kind="show" id="60T-MI-fAZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-1r-bq8">
-                                <rect key="frame" x="138" y="311" width="99" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New"/>
-                                <connections>
-                                    <segue destination="sQy-EU-zae" kind="show" id="Ch4-Sd-U34"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M3-f3-fEK">
-                                <rect key="frame" x="138" y="489" width="99" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View"/>
-                                <connections>
-                                    <segue destination="Rjh-pu-XsO" kind="show" id="pBA-Jq-eNB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalCentering" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-fO-1RF">
+                                <rect key="frame" x="148.5" y="292.5" width="78" height="102"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-1r-bq8">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
+                                        <state key="normal" title="New"/>
+                                        <connections>
+                                            <segue destination="sQy-EU-zae" kind="show" id="Ch4-Sd-U34"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-dG-gio">
+                                        <rect key="frame" x="0.0" y="36" width="78" height="30"/>
+                                        <state key="normal" title="In Progress"/>
+                                        <connections>
+                                            <segue destination="IfI-iC-q02" kind="show" id="60T-MI-fAZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M3-f3-fEK">
+                                        <rect key="frame" x="0.0" y="72" width="78" height="30"/>
+                                        <state key="normal" title="View"/>
+                                        <connections>
+                                            <segue destination="Rjh-pu-XsO" kind="show" id="pBA-Jq-eNB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7VG-fO-1RF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XBP-1R-5IU"/>
+                            <constraint firstItem="7VG-fO-1RF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="poT-XV-gGo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="NewButton" destination="DSv-1r-bq8" id="eN6-lI-vbm"/>
+                        <outlet property="ProgressButton" destination="al9-dG-gio" id="Cec-Y2-Lkn"/>
+                        <outlet property="ViewButton" destination="6M3-f3-fEK" id="CjA-Ge-X8S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,15 +157,8 @@
                                 <color key="textColor" red="1" green="0.64688907017195818" blue="0.18707152751483602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sep-oH-MXi">
-                                <rect key="frame" x="16" y="30" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7ya-Bw-61R"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-es-Isk">
-                                <rect key="frame" x="0.0" y="108" width="343" height="539"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-es-Isk">
+                                <rect key="frame" x="16" y="108" width="343" height="539"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kMm-zO-WTg">
@@ -192,9 +196,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sep-oH-MXi">
+                                <rect key="frame" x="16" y="31" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7ya-Bw-61R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Fkw-uQ-zfk" firstAttribute="centerX" secondItem="AAz-0r-EZs" secondAttribute="centerX" id="3Jj-ow-6yG"/>
                             <constraint firstItem="Sep-oH-MXi" firstAttribute="leading" secondItem="AAz-0r-EZs" secondAttribute="leading" constant="16" id="4Nq-Eu-aqd"/>
                             <constraint firstItem="Gcg-es-Isk" firstAttribute="top" secondItem="AAz-0r-EZs" secondAttribute="top" constant="88" id="9h2-SU-NE5"/>
                             <constraint firstItem="Fkw-uQ-zfk" firstAttribute="top" secondItem="AAz-0r-EZs" secondAttribute="top" constant="30" id="HdR-dX-VbL"/>
@@ -346,6 +358,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lri-40-jTI"/>
+        <segue reference="Ch4-Sd-U34"/>
     </inferredMetricsTieBreakers>
 </document>
