@@ -103,19 +103,30 @@ class madlib {
     
     //hey, this is rough, but it works, so it's ok
     func getFullText() -> String{
+        
         var blankIndex = 0;
-        for i in 0..<words.count {
-            if words[i].hasPrefix("<"){
-                words[i] = (blanks[blankIndex]?.2)!
-                blankIndex += 1 
-            }
-        }
+//        for i in 0..<words.count {
+//            if words[i].hasPrefix("<"){
+//                words[i] = (blanks[blankIndex]?.2)!
+//                blankIndex += 1
+//            }
+//        }
+        
+        var currWord : String
         var completeString = "";
         for i in titleLength..<words.count{
-            if(words[i] == "." || words[i] == ";" || words[i] == "!" || words[i] == ","){
-                completeString += words[i]
+            
+            currWord = words[i]
+            
+            if (currWord.hasPrefix("<")){
+                completeString += " " + (blanks[blankIndex]?.2)!
+                blankIndex += 1
+                if(currWord.hasSuffix(".") || currWord.hasSuffix(";") || currWord.hasSuffix("!") || currWord.hasSuffix(",")){
+                    completeString += currWord.suffix(1)
+                }
+                
             } else {
-                completeString += " " + words[i]
+                completeString += " " + currWord
             }
         }
         return completeString

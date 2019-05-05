@@ -70,7 +70,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/LIBModel.swift"
-            timestampString = "578788605.234094"
+            timestampString = "578791675.649653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/LIBModel.swift"
-            timestampString = "578788605.234304"
+            timestampString = "578791675.6497819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "getFullText()"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,7 +102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/CreateLibViewController.swift"
-            timestampString = "578788605.2343971"
+            timestampString = "578791675.649875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -118,7 +118,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/CreateLibViewController.swift"
-            timestampString = "578788605.234458"
+            timestampString = "578791675.649958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -133,56 +133,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "The Liberator/LIBModel.swift"
-            timestampString = "578788605.234512"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "getFullText()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "The_Liberator.madlib.getFullText() -&gt; Swift.String"
-                  moduleName = "The Liberator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
-                  timestampString = "578788292.247831"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "623">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "The_Liberator.madlib.getFullText() -&gt; Swift.String"
-                  moduleName = "The Liberator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
-                  timestampString = "578788292.25027"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "3240">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "The Liberator/CreateLibViewController.swift"
-            timestampString = "578788605.234563"
+            timestampString = "578791675.650036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
