@@ -11,6 +11,7 @@
 		37BBB08A2273A999004ACE5D /* christmasLib.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37BBB0892273A999004ACE5D /* christmasLib.txt */; };
 		37BBB08B2273AD83004ACE5D /* LIBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBB0872272590F004ACE5D /* LIBModel.swift */; };
 		37BBB08D227E5F34004ACE5D /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBB08C227E5F34004ACE5D /* CatagoryCell.swift */; };
+		401F4F58227FA1FD0032E0A6 /* FinishedLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F4F57227FA1FD0032E0A6 /* FinishedLibViewController.swift */; };
 		40501AC122712F3300686B8B /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC022712F3300686B8B /* CategoriesViewController.swift */; };
 		40501AC3227149F700686B8B /* CreateLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC2227149F700686B8B /* CreateLibViewController.swift */; };
 		D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C88226E68E600C170E4 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		37BBB0872272590F004ACE5D /* LIBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIBModel.swift; sourceTree = "<group>"; };
 		37BBB0892273A999004ACE5D /* christmasLib.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = christmasLib.txt; sourceTree = "<group>"; };
 		37BBB08C227E5F34004ACE5D /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
+		401F4F57227FA1FD0032E0A6 /* FinishedLibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedLibViewController.swift; sourceTree = "<group>"; };
 		40501AC022712F3300686B8B /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		40501AC2227149F700686B8B /* CreateLibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLibViewController.swift; sourceTree = "<group>"; };
 		D3DE1C85226E68E600C170E4 /* The Liberator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Liberator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				D3DE1C88226E68E600C170E4 /* AppDelegate.swift */,
 				37BBB0872272590F004ACE5D /* LIBModel.swift */,
 				D3DE1C8A226E68E600C170E4 /* ViewController.swift */,
+				401F4F57227FA1FD0032E0A6 /* FinishedLibViewController.swift */,
 				D3DE1C8C226E68E600C170E4 /* Main.storyboard */,
 				40501AC2227149F700686B8B /* CreateLibViewController.swift */,
 				40501AC022712F3300686B8B /* CategoriesViewController.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401F4F58227FA1FD0032E0A6 /* FinishedLibViewController.swift in Sources */,
 				D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */,
 				37BBB08D227E5F34004ACE5D /* CatagoryCell.swift in Sources */,
 				D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */,

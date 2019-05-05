@@ -105,6 +105,14 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFinished" {
+            if let vc = segue.destination as? FinishedLibViewController {
+                vc.text = (lib?.getFullText())!
+            }
+        }
+    }
+    
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cell = tableView.cellForRow(at: indexPath) as! InputCell
 //        cell.inputField.resignFirstResponder()
