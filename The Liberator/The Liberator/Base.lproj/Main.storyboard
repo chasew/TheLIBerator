@@ -277,7 +277,7 @@
                                     <segue destination="sQy-EU-zae" kind="show" identifier="" id="Lri-40-jTI"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-uz-xJa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-uz-xJa">
                                 <rect key="frame" x="16" y="116" width="343" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -328,10 +328,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4M-PP-WLs">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
                                         <state key="normal" title="Save Progress"/>
+                                        <connections>
+                                            <action selector="SaveButton:" destination="eMY-Vd-WOh" eventType="touchUpInside" id="7oq-8b-8ix"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRs-kT-tbo">
                                         <rect key="frame" x="114" y="0.0" width="41" height="30"/>
                                         <state key="normal" title="Finish"/>
+                                        <connections>
+                                            <action selector="FinishButton:" destination="eMY-Vd-WOh" eventType="touchUpInside" id="z6z-6J-hFC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
