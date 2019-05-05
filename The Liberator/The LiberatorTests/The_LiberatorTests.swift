@@ -25,6 +25,9 @@ class The_LiberatorTests: XCTestCase {
         for i in 0...18 {
             lib.fillBlank(position: i, text: "[\(i)th rando word]")
         }
+        lib.fillBlank(position: 3, text: "[I AM NEW, LET ME IN]")
+        lib.fillBlank(position: 3, text: "[F]")
+        lib.fillBlank(position: 18, text: "[LITERALLY]")
         print(lib.getFullText())
 
     }

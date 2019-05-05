@@ -10,34 +10,35 @@ import UIKit
 
 class InputCell: UITableViewCell {
     
-    
     @IBOutlet weak var inputType: UILabel!
     @IBOutlet weak var inputField: UITextField!
     @IBAction func inputAction(_ sender: Any) {
         inputField.becomeFirstResponder()
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+
     
 }
 
-class CreateLibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CreateLibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     //will be passed via Catagory Selection Screen so should always exist
     var libFileName : String?
     var lib : madlib?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func SaveButton(_ sender: Any) {
+        if let fullText = lib?.getFullText(){
+            print(fullText)
+        }
+    }
+    @IBAction func FinishButton(_ sender: Any) {
+   
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,31 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.dataSource = self
         tableView.delegate = self
+    }
+ 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                self.view.frame.origin.y = -keyboardSize.height
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int{
@@ -61,15 +86,28 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InputCell", for: indexPath) as! InputCell
+        
         cell.inputType.text = lib?.getTypeOfPosition(pos: indexPath.item)
+        
+        //this three lines of code...was...not worth it...
+        cell.inputField.delegate = self
+        cell.inputField.text = lib?.getTextAt(position: indexPath.row) //filling from model
+        cell.inputField.tag = indexPath.row
+        
         return cell
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.item)
-        let cell = tableView.cellForRow(at: indexPath) as! InputCell
-        cell.inputField.becomeFirstResponder()
+    func textFieldDidEndEditing(_ textField: UITextField){
+        //this is essentially auto-save, you're welcome
+        if(textField.text! != ""){
+            lib?.fillBlank(position: textField.tag, text: textField.text!)
+        }
     }
     
-
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! InputCell
+//        cell.inputField.resignFirstResponder()
+//    }
+    
 }

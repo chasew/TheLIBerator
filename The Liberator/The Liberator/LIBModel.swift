@@ -76,6 +76,10 @@ class madlib {
         blanks[position]?.2 = text
     }
     
+    func getTextAt(position : Int) -> String{
+        return blanks[position]?.2 ?? "gg"
+    }
+    
     func deleteBlank(position : Int, text : String){
         blanks[position]?.0 = false
     }
