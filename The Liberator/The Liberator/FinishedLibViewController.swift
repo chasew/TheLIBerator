@@ -24,6 +24,7 @@ class FinishedLibViewController: UIViewController {
         textView.textAlignment = NSTextAlignment.justified
         
         let indices = (lib?.getFilledIndices())!
+        print("wtf? \(indices)")
         var words = text.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
         let attributedString = NSMutableAttributedString.init(string: text)
         for index in indices {

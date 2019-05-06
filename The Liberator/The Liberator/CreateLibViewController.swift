@@ -18,10 +18,8 @@ class InputCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
-    
-
-    
 }
 
 class CreateLibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -31,6 +29,8 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     var lib : madlib?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomSpace: NSLayoutConstraint!
+    @IBOutlet weak var spaceView: UIView!
     
     var keyTextField: UITextField?
     
@@ -41,9 +41,23 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
+            
+            //need to add "if contains key don't fucking add" part here
+            
+            //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
             if let key = self.keyTextField?.text{
-                print(key)
+                if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String] {
+                    libs.append(key)
+                    UserDefaults.standard.set(libs, forKey: "LibsInProgress")
+                    print("I'm saving \(libs)")
+                } else {
+                    var libs = [String]()
+                    libs.append(key)
+                    UserDefaults.standard.set(libs, forKey: "LibsInProgress")
+                    print("I'm saving \(libs)")
+                }
             }
+            
         }))
         self.present(alert, animated: true, completion: nil)
         if let fullText = lib?.getFullText(){
@@ -56,7 +70,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         if lib?.isComplete() == false {
             let alert = UIAlertController(title: "Not Complete!", message: "Must fill in all the blanks to see your madlib or press save progress to come back to it later", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
+               self.performSegue(withIdentifier: "toFinished", sender: self)
             }))
             self.present(alert, animated: true, completion: nil)
         }
@@ -77,28 +91,43 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
-    @objc func keyboardWillChange(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                print("wtf")
-                self.view.frame.origin.y = -keyboardSize.height
-                tableView.frame.origin.y += keyboardSize.height
-        }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        updateBottomLayoutConstraintWithNotification(notification: notification)
+        print("yeah")
     }
-    
+
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
-        tableView.frame.origin.y = 123
+        updateBottomLayoutConstraintWithNotification(notification: notification)
+        print("yeet")
     }
+    
+    //wowowow the keyboard doesn't cover shit anymore BLESSED
+    func updateBottomLayoutConstraintWithNotification(notification: NSNotification){
+        let userInfo = notification.userInfo!
+        let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let keyboardEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
+        let rawAnimationCurve = (notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
+        let animationCurve = UIView.AnimationOptions.init(rawValue: UInt(rawAnimationCurve))
+        
+        print("before: \(bottomSpace.constant)")
+        bottomSpace.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
+        print("after: \(bottomSpace.constant)")
+        
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: [.beginFromCurrentState, animationCurve], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
@@ -119,16 +148,23 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.inputField.delegate = self
         cell.inputField.text = lib?.getTextAt(position: indexPath.row) //filling from model
         cell.inputField.tag = indexPath.row
+        cell.inputField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         return cell
         
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField){
-        //this is essentially auto-save, you're welcome
+
+    //BOYYY THIS INEFFICIENT BUT IT WORKS :)
+    @objc func textFieldDidChange(_ textField: UITextField) {
         if(textField.text! != ""){
             lib?.fillBlank(position: textField.tag, text: textField.text!)
         }
+    }
+    
+    //you can hit enter to "stop typing" lol
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
