@@ -53,6 +53,13 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     
 
     @IBAction func FinishButton(_ sender: Any) {
+        if lib?.isComplete() == false {
+            let alert = UIAlertController(title: "Not Complete!", message: "Must fill in all the blanks to see your madlib or press save progress to come back to it later", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
    
     }
     
@@ -128,6 +135,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         if segue.identifier == "toFinished" {
             if let vc = segue.destination as? FinishedLibViewController {
                 vc.text = (lib?.getFullText())!
+                vc.lib = lib
             }
         }
     }
