@@ -108,7 +108,7 @@ class madlib {
         var indices = [Int]()
         for i in titleLength..<words.count{
             if words[i].hasPrefix("<"){
-                indices.append(i)
+                indices.append(i - titleLength)
             }
         }
         return indices
