@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FinishedLibViewController: UIViewController {
     
     var text = String()
+    let synthesizer = AVSpeechSynthesizer()
+    
     
     @IBOutlet weak var textView: UITextView!
      var lib : madlib?
+    @IBOutlet weak var speak: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,13 @@ class FinishedLibViewController: UIViewController {
             textView.isEditable = false
         }
         
+    }
+    
+    
+    @IBAction func speakButton(_ sender: UIButton) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        synthesizer.speak(utterance)
     }
     
 
