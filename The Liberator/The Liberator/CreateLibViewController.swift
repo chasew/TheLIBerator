@@ -61,8 +61,15 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc func keyboardWillChange(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                print("wtf")
                 self.view.frame.origin.y = -keyboardSize.height
+                tableView.frame.origin.y += keyboardSize.height
         }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+        tableView.frame.origin.y = 123
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,10 +77,6 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int{
@@ -113,9 +116,9 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! InputCell
-//        cell.inputField.resignFirstResponder()
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! InputCell
+        cell.inputField.resignFirstResponder()
+    }
     
 }

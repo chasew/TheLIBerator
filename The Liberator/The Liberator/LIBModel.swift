@@ -101,6 +101,16 @@ class madlib {
         return true
     }
     
+    func getFilledIndices() -> [Int] {
+        var indices = [Int]()
+        for i in titleLength..<words.count{
+            if words[i].hasPrefix("<"){
+                indices.append(i)
+            }
+        }
+        return indices
+    }
+    
     //hey, this is rough, but it works, so it's ok
     func getFullText() -> String{
         
