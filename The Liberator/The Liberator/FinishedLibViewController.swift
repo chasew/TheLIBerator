@@ -19,6 +19,8 @@ class FinishedLibViewController: UIViewController {
         textView.text = text
         textView.font = .preferredFont(forTextStyle: .body)
         textView.adjustsFontForContentSizeCategory = true
+        textView.center = self.view.center
+        textView.textAlignment = NSTextAlignment.justified
     }
     
 

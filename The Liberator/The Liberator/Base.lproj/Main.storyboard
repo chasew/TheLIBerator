@@ -379,12 +379,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd1-TC-nJf">
-                                <rect key="frame" x="22" y="38" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRi-tb-D6I">
+                                <rect key="frame" x="25" y="40" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Home"/>
                                 <connections>
-                                    <segue destination="eMY-Vd-WOh" kind="show" id="Ruh-Oh-FEW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="QPH-UB-e4d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -401,8 +401,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ruh-Oh-FEW"/>
         <segue reference="3gu-AF-GsW"/>
- a6efe219edd1425fad714556c5dd9ba15443d39f
+        <segue reference="QPH-UB-e4d"/>
     </inferredMetricsTieBreakers>
 </document>
