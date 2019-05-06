@@ -8,8 +8,11 @@
 
 import Foundation
 
+//basically a bunch of model classes - we designing on the FLY BOIIIII
+
 class madlib {
     
+    var fileName : String
     var title : String
     var titleLength : Int
     var theWholeString : String
@@ -24,7 +27,7 @@ class madlib {
     //init a blank madlib from file: first word is the title then hopefully does the rest right
     //haha, crying
     init(fileName : String){
-        
+        self.fileName = fileName
         var lines = [String]() //this is literally to extract the title
         words = [String]()
         theWholeString = "that's it that's the project"
@@ -115,13 +118,6 @@ class madlib {
     func getFullText() -> String{
         
         var blankIndex = 0;
-//        for i in 0..<words.count {
-//            if words[i].hasPrefix("<"){
-//                words[i] = (blanks[blankIndex]?.2)!
-//                blankIndex += 1
-//            }
-//        }
-        
         var currWord : String
         var completeString = "";
         for i in titleLength..<words.count{
@@ -141,6 +137,40 @@ class madlib {
         }
         return completeString
     }
+    
+    func saveMaybe(key : String){
+        var types = [Int:String]()
+        var toBlanks = [Int:String]()
+        
+        for (index, data) in blanks {
+            types[index] = data.1
+            toBlanks[index] = data.2
+        }
+        
+        let saveMe = inProgressLib(fileName: fileName, blankTexts: toBlanks)
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(saveMe) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: key)
+        }
+        
+        
+    }
+}
+
+/*BEFORE I FUCKING FORGET:
+when you hit save - Userdefaults has: key -> filename, data on blanks
+ Userdefaults also needs list of saved [key]
+ will display on saved screen by key
+ when you click on it, ---> create lib will load NEW LIB from associated filename
+                            then like, it will load FROM USERDEFAULTS the blanks to display
+                            then display ---> then should work as normal
+ 
+*/
+
+struct inProgressLib : Codable {
+    var fileName : String
+    var blankTexts : [Int:String]
 }
 
 class LIBModel {

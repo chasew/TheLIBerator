@@ -15,7 +15,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var selected = String()
     
-    let catagories = ["christmashehe", "christmasLib", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
+    let catagories = ["testLib", "christmasLib", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
     
     let catagoryImages: [UIImage] = [
         UIImage(named: "holidaze")!,

@@ -13,7 +13,7 @@ class InputCell: UITableViewCell {
     @IBOutlet weak var inputType: UILabel!
     @IBOutlet weak var inputField: UITextField!
     @IBAction func inputAction(_ sender: Any) {
-        inputField.becomeFirstResponder()
+       // inputField.becomeFirstResponder()
     }
     
     override func awakeFromNib() {
@@ -31,11 +31,27 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     var lib : madlib?
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var keyTextField: UITextField?
+    
     @IBAction func SaveButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Save Progress", message: "Enter a title for your madlib", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: {(textField: UITextField) -> Void in
+            self.keyTextField = textField
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
+            if let key = self.keyTextField?.text{
+                print(key)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
         if let fullText = lib?.getFullText(){
             print(fullText)
         }
     }
+    
+
     @IBAction func FinishButton(_ sender: Any) {
    
     }
