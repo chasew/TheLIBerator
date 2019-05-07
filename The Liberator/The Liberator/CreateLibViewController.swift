@@ -36,7 +36,9 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     @IBOutlet weak var spaceView: UIView!
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var TitleButton: UIButton!
+    
+
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
@@ -171,7 +173,11 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if(lib?.key != ""){
-            titleLabel.text = lib?.key
+            TitleButton.setTitle(lib?.key, for: .normal)
+            
+        }
+        else {
+            TitleButton.setTitle("  " + "New Madlib  ", for: .normal)
         }
         
         tableView.dataSource = self
@@ -202,6 +208,12 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         finishButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
         finishButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
         finishButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
+        
+        TitleButton.layer.cornerRadius = 10
+        TitleButton.layer.borderWidth = 3
+        TitleButton.layer.backgroundColor = UIColor(red: 0.8471, green: 0.8902, blue: 1, alpha: 1.0).cgColor
+        TitleButton.layer.borderColor = UIColor(red: 0.0392, green: 0.3098, blue: 1, alpha: 1.0).cgColor
+        TitleButton.setTitleColor(UIColor(red: 0.0392, green: 0.3098, blue: 1, alpha: 1.0), for: UIControl.State.normal)
     }
  
     

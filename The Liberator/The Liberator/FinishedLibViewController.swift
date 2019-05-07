@@ -26,6 +26,7 @@ class FinishedLibViewController: UIViewController {
     
     @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var TitleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,20 @@ class FinishedLibViewController: UIViewController {
         homeButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
         homeButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
         homeButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
+        
+        if(lib?.key != ""){
+            TitleButton.setTitle(lib?.key, for: .normal)
+            
+        }
+        else {
+            TitleButton.setTitle("  " + "Untitled  ", for: .normal)
+        }
+        
+        TitleButton.layer.cornerRadius = 10
+        TitleButton.layer.borderWidth = 3
+        TitleButton.layer.backgroundColor = UIColor(red: 0.8471, green: 0.8902, blue: 1, alpha: 1.0).cgColor
+        TitleButton.layer.borderColor = UIColor(red: 0.0392, green: 0.3098, blue: 1, alpha: 1.0).cgColor
+        TitleButton.setTitleColor(UIColor(red: 0.0392, green: 0.3098, blue: 1, alpha: 1.0), for: UIControl.State.normal)
         
     }
     
