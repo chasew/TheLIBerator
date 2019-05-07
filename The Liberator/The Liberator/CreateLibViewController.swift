@@ -22,6 +22,10 @@ class InputCell: UITableViewCell {
     }
 }
 
+//NOTES: you want to be able to delete the thing you saved when you finish it
+//like, if something is saved and you finish, you don't need to give it a title
+//
+
 class CreateLibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     //will be passed via Catagory Selection Screen so should always exist
@@ -31,42 +35,57 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     @IBOutlet weak var spaceView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var keyTextField: UITextField?
+    var finishedKeyTextField: UITextField?
     
     @IBAction func SaveButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Save Progress", message: "Enter a title for your madlib", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: {(textField: UITextField) -> Void in
-            self.keyTextField = textField
-        })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
-            
-            //need to add "if contains key don't fucking add" part here
-            
-            
-            if let key = self.keyTextField?.text{
+        print("dude, wtf?")
+        //SAVE NEW
+        if(lib?.key == "") {
+            let alert = UIAlertController(title: "Save Progress", message: "Enter a title for your madlib", preferredStyle: .alert)
+            alert.addTextField(configurationHandler: {(textField: UITextField) -> Void in
+                self.keyTextField = textField
+            })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
                 
-                //saving the actual thing
-                self.lib?.saveMaybe(key: key)
+                //need to add "if contains key don't fucking add" part here
                 
-                //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
-                if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
-                    libs[key] = self.lib?.getFileName()
-                    UserDefaults.standard.set(libs, forKey: "LibsInProgress")
-                    print("I'm saving \(libs)")
-                } else {
-                    var libs = [String:String]()
-                    libs[key] = self.lib?.getFileName()
-                    UserDefaults.standard.set(libs, forKey: "LibsInProgress")
-                    print("I'm saving \(libs)")
+                
+                if let key = self.keyTextField?.text{
+                    //saving the actual thing
+                    self.lib?.saveMaybe(key: key)
+                    
+                    //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
+                    if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
+                        libs[key] = self.lib?.getFileName()
+                        UserDefaults.standard.set(libs, forKey: "LibsInProgress")
+                        print("I'm saving \(libs)")
+                    } else {
+                        var libs = [String:String]()
+                        libs[key] = self.lib?.getFileName()
+                        UserDefaults.standard.set(libs, forKey: "LibsInProgress")
+                        print("I'm saving \(libs)")
+                    }
                 }
-            }
+                self.performSegue(withIdentifier: "createToHome", sender: self)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        
+        } else { //ALREADY SAVED LOL
+            print("I SAVED YOU ALREADY")
+            let alert = UIAlertController(title: "Save Progress", message: "Saving \"\(lib!.key)\"", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
+                if let oldKey = self.lib?.key {
+                    self.lib?.saveMaybe(key: oldKey)
+                }
+                self.performSegue(withIdentifier: "createToHome", sender: self)
+            }))
             
-        }))
-        self.present(alert, animated: true, completion: nil)
-        if let fullText = lib?.getFullText(){
-            print(fullText)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -78,7 +97,66 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
 
             }))
             self.present(alert, animated: true, completion: nil)
+        } else {
+ 
+            //YO, U HAVE TO SAVE IT LOLOLOLOLOL
+            
+            if(lib?.key == ""){
+                let alert = UIAlertController(title: "Finish", message: "Enter a title for your madlib", preferredStyle: .alert)
+                alert.addTextField(configurationHandler: {(textField: UITextField) -> Void in
+                    self.finishedKeyTextField = textField
+                })
+                alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
+                    //have not saved before; must enter key
+                    if let key = self.finishedKeyTextField?.text {
+                        self.saveFinishedLib(key: key)
+                    }
+                    self.performSegue(withIdentifier: "toFinished", sender: self)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                //have already saved, just go to finish
+                if let key = self.lib?.key{
+                    self.saveFinishedLib(key: key)
+                }
+                self.performSegue(withIdentifier: "toFinished", sender: self)
+            }
         }
+    }
+    
+    func saveFinishedLib(key : String){
+        //delete the "in progress" version of the lib when you finish thx
+        if (UserDefaults.standard.value(forKey: key) as? Data) != nil {
+            UserDefaults.standard.removeObject(forKey: key)
+            if var keyAndFile = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String : String] {
+                keyAndFile.removeValue(forKey: key)
+                UserDefaults.standard.set(keyAndFile, forKey: "LibsInProgress")
+            }
+            UserDefaults.standard.synchronize()
+            
+        }
+        
+        //time to save to userDefaults
+        if var libs = UserDefaults.standard.value(forKey: "FinishedLibs") as? [String:String] {
+            libs[key] = self.lib?.getFullText()
+            UserDefaults.standard.set(libs, forKey: "FinishedLibs")
+        } else {
+            var libs = [String:String]()
+            libs[key] = self.lib?.getFullText()
+            UserDefaults.standard.set(libs, forKey: "FinishedLibs")
+        }
+        
+        //lol, when you're too lazy to make one big thing so you make two small things
+        if var titles = UserDefaults.standard.value(forKey: "TitleToFileName") as? [String:String] {
+            titles[key] = self.lib?.getFileName()
+            UserDefaults.standard.set(titles, forKey: "TitleToFileName")
+        } else {
+            var titles = [String:String]()
+            titles[key] = self.lib?.getFileName()
+            UserDefaults.standard.set(titles, forKey: "TitleToFileName")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -86,6 +164,10 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
 
         if let file = libFileName {
             lib = madlib(fileName: file)
+        }
+        
+        if(lib?.key != ""){
+            titleLabel.text = lib?.key
         }
         
         tableView.dataSource = self
@@ -101,12 +183,10 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc func keyboardWillShow(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification: notification)
-        print("yeah")
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification: notification)
-        print("yeet")
     }
     
     //wowowow the keyboard doesn't cover shit anymore BLESSED
@@ -172,6 +252,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("To finish")
         if segue.identifier == "toFinished" {
             if let vc = segue.destination as? FinishedLibViewController {
                 vc.text = (lib?.getFullText())!

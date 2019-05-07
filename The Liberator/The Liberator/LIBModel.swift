@@ -12,6 +12,7 @@ import Foundation
 
 class madlib {
     
+    var key : String
     var fileName : String
     var title : String
     var titleLength : Int
@@ -29,6 +30,7 @@ class madlib {
     init(){
         //this does nothing :)
         self.fileName = "F"
+        key = "lol, shit"
         title = "U"
         titleLength = 0
         theWholeString = "lol"
@@ -82,8 +84,7 @@ class madlib {
         title = lines[0]
         titleLength = title.components(separatedBy: NSCharacterSet.whitespacesAndNewlines).count
         completed = false
-        print(title)
-        print(blanks)
+        key = ""
     }
     
     func fillBlank(position : Int, text : String){
@@ -95,9 +96,6 @@ class madlib {
         return blanks[position]?.2 ?? "gg"
     }
     
-    func deleteBlank(position : Int, text : String){
-        blanks[position]?.0 = false
-    }
     
     func getTypeOfPosition(pos : Int) -> String {
         return blanks[pos]?.1 ?? "something went wrong"
@@ -163,14 +161,12 @@ class madlib {
             toBlanks[index] = data.2
         }
         
-        let saveMe = inProgressLib(fileName: fileName, blankTexts: toBlanks)
+        let saveMe = inProgressLib(key: key, fileName: fileName, blankTexts: toBlanks)
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(saveMe) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: key)
         }
-        
-        
     }
 }
 
@@ -185,6 +181,7 @@ when you hit save - Userdefaults has: key -> filename, data on blanks
 */
 
 struct inProgressLib : Codable {
+    var key : String
     var fileName : String
     var blankTexts : [Int:String]
 }

@@ -29,13 +29,11 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
 
         if let libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
             inProgressLibs = libs
-            print("Yo, i got sum \(libs)")
         }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("how many tho: \(inProgressLibs.count)")
         return inProgressLibs.count
     }
     
@@ -62,6 +60,7 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
                 if let keyAndFile = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String : String] {
                     if let file = keyAndFile[selectedKey]{
                         lib = madlib(fileName: file)
+                        lib.key = selectedKey
                     }
                 }
                 

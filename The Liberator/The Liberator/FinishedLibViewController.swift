@@ -11,7 +11,9 @@ import AVFoundation
 
 class FinishedLibViewController: UIViewController {
     
+    var lib : madlib?
     var text = String()
+    
     let synthesizer = AVSpeechSynthesizer()
     var savedPitch = Float()
     var savedVolume = Float()
@@ -19,7 +21,6 @@ class FinishedLibViewController: UIViewController {
     
     
     @IBOutlet weak var textView: UITextView!
-     var lib : madlib?
     @IBOutlet weak var speak: UIButton!
     
     override func viewDidLoad() {
