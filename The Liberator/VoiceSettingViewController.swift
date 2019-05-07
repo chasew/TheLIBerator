@@ -13,10 +13,7 @@ class VoiceSettingViewController: UIViewController {
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var rateSlider: UISlider!
     @IBOutlet weak var backButton: UIButton!
-    
-    var savedPitch: Float = 0.5
-    var savedVolume: Float = 0.5
-    var savedRate: Float = 0.5
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,31 +33,32 @@ class VoiceSettingViewController: UIViewController {
         backButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
         backButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
         backButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
+        
+        if let settings = UserDefaults.standard.value(forKey: "PitchSettings") as? [String:Float] {
+            pitchSlider.value = settings["pitch"]!
+            volumeSlider.value = settings["volume"]!
+            rateSlider.value = settings["rate"]!
+            
+        }
+        
     }
     
     @IBAction func pitchValueChanged(_ sender: UISlider) {
-        savedPitch = sender.value
-       print("the beginning savedPitch is \(savedPitch)")
+        changeSetting(setting: "pitch", value: sender.value)
     }
     
     @IBAction func volumeValueChanged(_ sender: UISlider) {
-        savedVolume = sender.value
-        print("the beginning savedVolume is \(savedVolume)")
+        changeSetting(setting: "volume", value: sender.value)
     }
     
     @IBAction func rateValueChanged(_ sender: UISlider) {
-        savedRate = sender.value
-        print("the beginning savedRate is \(savedRate)")
+        changeSetting(setting: "rate", value: sender.value)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toFinished" {
-            if let vc = segue.destination as? FinishedLibViewController {
-                vc.savedPitch = savedPitch
-                vc.savedVolume = savedVolume
-                vc.savedRate = savedRate
-                print("hello im here :))))")
-            }
+    func changeSetting(setting : String, value: Float){
+        if var settings = UserDefaults.standard.value(forKey: "PitchSettings") as? [String:Float] {
+            settings[setting] = value
+            UserDefaults.standard.set(settings, forKey: "PitchSettings")
         }
     }
     

@@ -74,15 +74,18 @@ class FinishedLibViewController: UIViewController {
     }
     
     @IBAction func speakButton(_ sender: UIButton) {
-        let vc = VoiceSettingViewController()
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = vc.savedRate
-        utterance.pitchMultiplier = vc.savedPitch
-        utterance.volume = vc.savedVolume
-        print(vc.savedRate)
-        print(vc.savedPitch)
-        print(vc.savedVolume)
+        
+        if var settings = UserDefaults.standard.value(forKey: "PitchSettings") as? [String:Float] {
+            utterance.rate = settings["rate"]!
+            utterance.pitchMultiplier = settings["pitch"]!
+            utterance.volume = settings["volume"]!
+            
+            print("RATE \(utterance.rate)")
+            
+        }
+        
         synthesizer.speak(utterance)
     }
     
