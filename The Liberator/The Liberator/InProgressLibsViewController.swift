@@ -48,14 +48,7 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedKey = Array(inProgressLibs)[indexPath.row].key
-        print(selectedKey)
-        
-//        let currentCell = tableView.cellForRow(at: indexPath) as! InProgressCell
-//        if let text = currentCell.keyLabel!.text {
-//            print("SELECTEDKEY \(selectedKey)")
-//            selectedKey = text
-//        }
-        //self.performSegue(withIdentifier: "toReCreate", sender: self)
+        self.performSegue(withIdentifier: "toReCreate", sender: self)
         
     }
     
@@ -64,17 +57,27 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
             if let destinationVC = segue.destination as? CreateLibViewController {
                 
                 //need to manually reload the lib!
+                var lib = madlib()
                 
-                //var lib = madlib(fileName: selectedKey)
-                
-                if let libData = UserDefaults.standard.value(forKey: selectedKey) as? Data {
-                    let decoder = JSONDecoder()
-                    if let loadedLib = try? decoder.decode(inProgressLib.self, from: libData){
-                        print("I'VE LOADED: \(loadedLib.fileName)")
+                if let keyAndFile = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String : String] {
+                    if let file = keyAndFile[selectedKey]{
+                        lib = madlib(fileName: file)
                     }
                 }
                 
-                destinationVC.libFileName = selectedKey
+                if let savedLib = UserDefaults.standard.value(forKey: selectedKey) as? Data {
+                    let decoder = JSONDecoder()
+                    if let loadedLib = try? decoder.decode(inProgressLib.self, from: savedLib) {
+                        print("SDKUHIFKSUEFHSKDFJSKDHF\(loadedLib.blankTexts)")
+                        for i in 0..<lib.getNumBlanks(){
+                            if let text = loadedLib.blankTexts[i] {
+                                lib.fillBlank(position: i, text: text)
+                            }
+                        }
+                    }
+                }
+                
+                destinationVC.lib = lib
             }
         }
     }

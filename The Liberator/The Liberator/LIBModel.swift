@@ -26,6 +26,18 @@ class madlib {
     
     //init a blank madlib from file: first word is the title then hopefully does the rest right
     //haha, crying
+    init(){
+        //this does nothing :)
+        self.fileName = "F"
+        title = "U"
+        titleLength = 0
+        theWholeString = "lol"
+        words = ["yee"]
+        blanks = [Int:(Bool,String,String)]()
+        blankTypes = ["whysomany"]
+        completed = false
+    }
+    
     init(fileName : String){
         self.fileName = fileName
         var lines = [String]() //this is literally to extract the title

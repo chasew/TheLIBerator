@@ -48,7 +48,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
             if let key = self.keyTextField?.text{
                 
                 //saving the actual thing
-                //self.lib?.saveMaybe(key: key)
+                self.lib?.saveMaybe(key: key)
                 
                 //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
                 if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
