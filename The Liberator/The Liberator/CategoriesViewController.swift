@@ -12,7 +12,7 @@ import UIKit
 class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var categoriesButton: UIButton!
     var selected = String()
     
     let catagories = ["Camping", "Love", "Holidays", "One Liners", "Funny", "Misc"]
@@ -53,6 +53,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         backButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
         backButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
         backButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
+        
+        categoriesButton.layer.cornerRadius = 10
+        categoriesButton.layer.borderWidth = 3
+        categoriesButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
+        categoriesButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
+        categoriesButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
         
     }
     

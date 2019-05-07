@@ -45,10 +45,10 @@ class VoiceSettingViewController: UIViewController, UIPickerViewDelegate, UIPick
         pickerData = ["American", "Spanish - Mexico", "Chinese - simplified", "Hebrew"]
         self.languagesPicker.delegate = self
         self.languagesPicker.dataSource = self
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"RedBlueBG")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"voicesettingBG")!)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "RedBlueBG")?.draw(in: self.view.bounds)
+        UIImage(named: "voicesettingBG")?.draw(in: self.view.bounds)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
