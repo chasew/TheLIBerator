@@ -60,6 +60,10 @@ class ViewController: UIViewController {
             ]
             UserDefaults.standard.set(settings, forKey: "PitchSettings")
         }
+        
+        if (UserDefaults.standard.value(forKey: "Language") as? String) == nil {
+            UserDefaults.standard.set("English", forKey: "Language")
+        }
     }
 
 

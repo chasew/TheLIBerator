@@ -18,6 +18,7 @@ class FinishedLibViewController: UIViewController {
     var savedPitch = Float()
     var savedVolume = Float()
     var savedRate = Float()
+    let defaults = UserDefaults.standard
     
     
     @IBOutlet weak var textView: UITextView!
@@ -74,14 +75,20 @@ class FinishedLibViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        textView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
-    }
-    
     @IBAction func speakButton(_ sender: UIButton) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        switch  (defaults.object(forKey:"Language") as? String)! {
+        case "English":
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        case "Spanish":
+            utterance.voice = AVSpeechSynthesisVoice(language: "es")
+        case "Chinese":
+            utterance.voice = AVSpeechSynthesisVoice(language: "zh-Hans")
+        case "Hebrew":
+            utterance.voice = AVSpeechSynthesisVoice(language: "he")
+        default:
+            print("hello")
+        }
         
         if var settings = UserDefaults.standard.value(forKey: "PitchSettings") as? [String:Float] {
             utterance.rate = settings["rate"]!

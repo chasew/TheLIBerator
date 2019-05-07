@@ -8,18 +8,43 @@
 
 import UIKit
 
-class VoiceSettingViewController: UIViewController {
+class VoiceSettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var pitchSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var rateSlider: UISlider!
     @IBOutlet weak var backButton: UIButton!
-
+    @IBOutlet weak var languagesPicker: UIPickerView!
+    var pickerData : [String] = [String]()
+    let defaults = UserDefaults.standard
+//    var language = String()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (UserDefaults.standard.value(forKey: "Language") as? String) != nil{
+            UserDefaults.standard.set(pickerData[row], forKey: "Language")
+        }
+        //print("hopefully this is one thing haha")
+        
+        //language = (pickerData[row])
+        return pickerData[row]
+    }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        pickerData = ["American", "Spanish - Mexico", "Chinese - simplified", "Hebrew"]
+        self.languagesPicker.delegate = self
+        self.languagesPicker.dataSource = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"RedBlueBG")!)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
