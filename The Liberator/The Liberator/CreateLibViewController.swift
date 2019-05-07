@@ -75,7 +75,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         if lib?.isComplete() == false {
             let alert = UIAlertController(title: "Not Complete!", message: "Must fill in all the blanks to see your madlib or press save progress to come back to it later", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-               
+
             }))
             self.present(alert, animated: true, completion: nil)
         }
