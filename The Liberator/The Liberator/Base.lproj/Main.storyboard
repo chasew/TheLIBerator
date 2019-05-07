@@ -454,13 +454,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5g-WW-3ex">
-                                <rect key="frame" x="49" y="53" width="277" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-uz-xJa">
                                 <rect key="frame" x="16" y="94" width="343" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -549,6 +542,11 @@
                                     <segue destination="sQy-EU-zae" kind="show" id="vyO-Lq-3UJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-ti-nyE">
+                                <rect key="frame" x="102" y="54" width="177" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -559,7 +557,10 @@
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="sKe-uR-gDh" secondAttribute="trailing" constant="96" id="ELa-SK-xjD"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="1JD-nn-ARv" secondAttribute="trailing" constant="319" id="F82-Fp-5Nf"/>
                             <constraint firstItem="7lg-pg-sLV" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="GmY-SN-nVU"/>
+                            <constraint firstItem="wXA-ti-nyE" firstAttribute="top" secondItem="ViC-MF-HTO" secondAttribute="top" constant="10" id="Gzl-T7-hNg"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="16" id="MT8-nK-twt"/>
+                            <constraint firstItem="wXA-ti-nyE" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="102" id="PnQ-WK-p3o"/>
+                            <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="wXA-ti-nyE" secondAttribute="trailing" constant="96" id="YIW-rw-XAQ"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="Ygl-TG-pgG"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="top" secondItem="ViC-MF-HTO" secondAttribute="top" constant="62" id="dcg-pB-1DT"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="xzL-uz-xJa" secondAttribute="trailing" constant="16" id="eck-Qx-5uU"/>
@@ -570,13 +571,13 @@
                         <viewLayoutGuide key="safeArea" id="ViC-MF-HTO"/>
                     </view>
                     <connections>
+                        <outlet property="TitleButton" destination="wXA-ti-nyE" id="BIe-To-h2q"/>
                         <outlet property="backButton" destination="1JD-nn-ARv" id="MMS-a7-uWh"/>
                         <outlet property="bottomSpace" destination="wrs-y3-SUc" id="oMJ-WB-j8D"/>
                         <outlet property="finishButton" destination="zRs-kT-tbo" id="3ju-bA-DvQ"/>
                         <outlet property="saveButton" destination="M4M-PP-WLs" id="KBj-5g-qXi"/>
                         <outlet property="spaceView" destination="sKe-uR-gDh" id="3lN-32-ddg"/>
                         <outlet property="tableView" destination="xzL-uz-xJa" id="oXt-fX-Foj"/>
-                        <outlet property="titleLabel" destination="d5g-WW-3ex" id="gw7-gr-smq"/>
                         <outlet property="view" destination="6SH-bw-2Sl" id="W7k-zl-7q5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="createToHome" id="z7I-6Q-0gk"/>
                     </connections>
@@ -608,34 +609,46 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="skH-IA-sfj">
-                                <rect key="frame" x="83" y="51" width="214" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9bV-Py-U2B">
+                                <rect key="frame" x="80" y="54" width="214" height="71"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRi-tb-D6I">
-                                        <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
-                                        <state key="normal" title="  Home  "/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="QPH-UB-e4d"/>
-                                        </connections>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDH-KS-qWq">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Zx-aRW">
-                                        <rect key="frame" x="155" y="0.0" width="59" height="30"/>
-                                        <state key="normal" title="  Speak  "/>
-                                        <connections>
-                                            <action selector="speakButton:" destination="Y9i-WS-ceK" eventType="touchUpInside" id="FVD-dA-BKf"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="skH-IA-sfj">
+                                        <rect key="frame" x="0.0" y="41" width="214" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRi-tb-D6I">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                                <state key="normal" title="  Home  "/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="QPH-UB-e4d"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Zx-aRW">
+                                                <rect key="frame" x="155" y="0.0" width="59" height="30"/>
+                                                <state key="normal" title="  Speak  "/>
+                                                <connections>
+                                                    <action selector="speakButton:" destination="Y9i-WS-ceK" eventType="touchUpInside" id="FVD-dA-BKf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="skH-IA-sfj" firstAttribute="centerX" secondItem="z54-3J-6BZ" secondAttribute="centerX" id="v4C-Zh-ItC"/>
-                            <constraint firstItem="skH-IA-sfj" firstAttribute="top" secondItem="z54-3J-6BZ" secondAttribute="top" constant="7" id="yUh-ee-kG4"/>
+                            <constraint firstItem="z54-3J-6BZ" firstAttribute="trailing" secondItem="9bV-Py-U2B" secondAttribute="trailing" constant="81" id="5mw-Mz-nJL"/>
+                            <constraint firstItem="9bV-Py-U2B" firstAttribute="top" secondItem="z54-3J-6BZ" secondAttribute="top" constant="10" id="Q4T-px-hph"/>
+                            <constraint firstItem="9bV-Py-U2B" firstAttribute="leading" secondItem="z54-3J-6BZ" secondAttribute="leading" constant="80" id="YH0-0Z-oW3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z54-3J-6BZ"/>
                     </view>
                     <connections>
+                        <outlet property="TitleButton" destination="zDH-KS-qWq" id="HrW-4x-CMy"/>
                         <outlet property="homeButton" destination="fRi-tb-D6I" id="WCC-ZH-n3d"/>
                         <outlet property="speak" destination="RFQ-Zx-aRW" id="QKX-fG-Rsi"/>
                         <outlet property="speakButton" destination="RFQ-Zx-aRW" id="xdm-4Z-eZO"/>
@@ -648,7 +661,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qp-ui-7PM"/>
+        <segue reference="YCy-EL-JFt"/>
         <segue reference="pwQ-gK-eZI"/>
         <segue reference="vyO-Lq-3UJ"/>
         <segue reference="QPH-UB-e4d"/>
