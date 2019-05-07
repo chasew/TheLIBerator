@@ -16,6 +16,7 @@
 		401F4F58227FA1FD0032E0A6 /* FinishedLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F4F57227FA1FD0032E0A6 /* FinishedLibViewController.swift */; };
 		40501AC122712F3300686B8B /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC022712F3300686B8B /* CategoriesViewController.swift */; };
 		40501AC3227149F700686B8B /* CreateLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40501AC2227149F700686B8B /* CreateLibViewController.swift */; };
+		40A041F82280E67700B220D6 /* VoiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A041F72280E67700B220D6 /* VoiceSettingViewController.swift */; };
 		D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C88226E68E600C170E4 /* AppDelegate.swift */; };
 		D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE1C8A226E68E600C170E4 /* ViewController.swift */; };
 		D3DE1C8E226E68E600C170E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE1C8C226E68E600C170E4 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		401F4F57227FA1FD0032E0A6 /* FinishedLibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedLibViewController.swift; sourceTree = "<group>"; };
 		40501AC022712F3300686B8B /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		40501AC2227149F700686B8B /* CreateLibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLibViewController.swift; sourceTree = "<group>"; };
+		40A041F72280E67700B220D6 /* VoiceSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSettingViewController.swift; sourceTree = "<group>"; };
 		D3DE1C85226E68E600C170E4 /* The Liberator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Liberator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DE1C88226E68E600C170E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DE1C8A226E68E600C170E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		D3DE1C7C226E68E600C170E4 = {
 			isa = PBXGroup;
 			children = (
+				40A041F72280E67700B220D6 /* VoiceSettingViewController.swift */,
 				D3DE1C87226E68E600C170E4 /* The Liberator */,
 				D3DE1C9C226E68E700C170E4 /* The LiberatorTests */,
 				D3DE1CA7226E68E700C170E4 /* The LiberatorUITests */,
@@ -286,6 +289,7 @@
 				401F4F58227FA1FD0032E0A6 /* FinishedLibViewController.swift in Sources */,
 				D3DE1C8B226E68E600C170E4 /* ViewController.swift in Sources */,
 				37BBB0952280C084004ACE5D /* InProgressLibsViewController.swift in Sources */,
+				40A041F82280E67700B220D6 /* VoiceSettingViewController.swift in Sources */,
 				37BBB08D227E5F34004ACE5D /* CatagoryCell.swift in Sources */,
 				D3DE1C89226E68E600C170E4 /* AppDelegate.swift in Sources */,
 				40501AC3227149F700686B8B /* CreateLibViewController.swift in Sources */,
