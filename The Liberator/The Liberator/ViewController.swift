@@ -50,6 +50,16 @@ class ViewController: UIViewController {
         VoiceSettingsButton.layer.backgroundColor = UIColor(red: 0.6863, green: 0.8314, blue: 1, alpha: 1.0).cgColor
         VoiceSettingsButton.layer.borderColor = UIColor(red: 0.251, green: 0.098, blue: 0.8196, alpha: 1.0).cgColor
         VoiceSettingsButton.setTitleColor(UIColor(red: 0.251, green: 0.098, blue: 0.8196, alpha: 1.0), for: UIControl.State.normal)
+        
+        //setting default pitch settings :) 
+        if (UserDefaults.standard.value(forKey: "PitchSettings") as? [String:Float]) == nil {
+            let settings = [
+                "pitch" : 0.5,
+                "volume" : 0.5,
+                "rate" : 0.5
+            ]
+            UserDefaults.standard.set(settings, forKey: "PitchSettings")
+        }
     }
 
 
