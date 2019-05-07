@@ -23,6 +23,8 @@ class FinishedLibViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var speak: UIButton!
     
+    @IBOutlet weak var speakButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.text = text
@@ -56,6 +58,18 @@ class FinishedLibViewController: UIViewController {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
+        
+        speakButton.layer.cornerRadius = 10
+        speakButton.layer.borderWidth = 3
+        speakButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
+        speakButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
+        speakButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
+        
+        homeButton.layer.cornerRadius = 10
+        homeButton.layer.borderWidth = 3
+        homeButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
+        homeButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
+        homeButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
         
     }
     

@@ -12,6 +12,7 @@ class VoiceSettingViewController: UIViewController {
     @IBOutlet weak var pitchSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var rateSlider: UISlider!
+    @IBOutlet weak var backButton: UIButton!
     
     var savedPitch: Float = 0.5
     var savedVolume: Float = 0.5
@@ -21,6 +22,20 @@ class VoiceSettingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"RedBlueBG")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "RedBlueBG")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+        backButton.layer.cornerRadius = 10
+        backButton.layer.borderWidth = 3
+        backButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
+        backButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
+        backButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
     }
     
     @IBAction func pitchValueChanged(_ sender: UISlider) {
