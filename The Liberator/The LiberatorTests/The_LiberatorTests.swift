@@ -40,6 +40,16 @@ class The_LiberatorTests: XCTestCase {
         print(lib.getFullText())
         print(lib.getFilledIndices())
     }
+    
+    func testIndexThing(){
+        let lib = madlib(fileName: "Love Letter 4")
+        for i in 0..<lib.getNumBlanks() {
+            lib.fillBlank(position: i, text: "[\(i)th rando word]")
+        }
+        print(lib.getFilledIndices())
+    
+        
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

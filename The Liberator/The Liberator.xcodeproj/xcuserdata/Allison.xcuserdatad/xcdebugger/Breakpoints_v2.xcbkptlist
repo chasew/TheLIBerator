@@ -70,7 +70,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/LIBModel.swift"
-            timestampString = "578957607.4615771"
+            timestampString = "578960943.508793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/LIBModel.swift"
-            timestampString = "578957607.461657"
+            timestampString = "578960943.508884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "getFullText()"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,7 +102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/CreateLibViewController.swift"
-            timestampString = "578954868.88122"
+            timestampString = "578960943.50896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -118,13 +118,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Liberator/CreateLibViewController.swift"
-            timestampString = "578954868.881323"
+            timestampString = "578960943.509021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "SaveButton(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Liberator/LIBModel.swift"
+            timestampString = "578960943.5090801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "getFilledIndices()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Liberator.madlib.getFilledIndices() -&gt; Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "The Liberator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578960886.91073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_LiberatorTests.madlib.getFilledIndices() -&gt; Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "The LiberatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allison/Documents/CMSC/436/TheLIBerator/The%20Liberator/The%20Liberator/LIBModel.swift"
+                  timestampString = "578960890.951829"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "131">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -122,7 +122,7 @@ class madlib {
         var indices = [Int]()
         var actualIndex = titleLength
         var modifiedIndex = 0
-        var currWord = String()
+        var currWord = String() 
         
         while actualIndex < words.count {
             currWord = words[actualIndex]
@@ -137,6 +137,7 @@ class madlib {
             
             modifiedIndex += 1
             actualIndex += 1
+
         }
         
         return indices
