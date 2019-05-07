@@ -25,10 +25,11 @@ class FinishedLibViewController: UIViewController {
     
     @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.text = text
-        textView.font = .preferredFont(forTextStyle: .body)
+        textView.font = UIFont.systemFont(ofSize: 17.0)
         textView.adjustsFontForContentSizeCategory = true
         textView.center = self.view.center
         textView.textAlignment = NSTextAlignment.justified
@@ -71,6 +72,11 @@ class FinishedLibViewController: UIViewController {
         homeButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
         homeButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
     @IBAction func speakButton(_ sender: UIButton) {
