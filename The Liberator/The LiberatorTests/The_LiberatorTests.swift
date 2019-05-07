@@ -20,7 +20,7 @@ class The_LiberatorTests: XCTestCase {
     }
 
     func testDoTheThing() {
-        var lib = madlib(fileName: "christmasLib")
+        let lib = madlib(fileName: "christmasLib")
         XCTAssertEqual(19, lib.getNumBlanks())
         for i in 0...18 {
             lib.fillBlank(position: i, text: "[\(i)th rando word]")
@@ -32,6 +32,14 @@ class The_LiberatorTests: XCTestCase {
 
     }
 
+    func testToSTring() {
+        let lib = madlib(fileName: "hotDog")
+        lib.fillBlank(position: 0, text: "HELLO")
+        lib.fillBlank(position: 1, text: "HOT")
+        lib.fillBlank(position: 2, text: "DOG")
+        print(lib.getFullText())
+        print(lib.getFilledIndices())
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

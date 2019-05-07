@@ -76,7 +76,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreate" {
             if let destinationVC = segue.destination as? CreateLibViewController {
-                destinationVC.libFileName = pickRandomLib(catagory: selected)
+                destinationVC.libFileName = "hotDog"
+                //destinationVC.libFileName = pickRandomLib(catagory: selected)
             }
         }
     }

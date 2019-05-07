@@ -120,11 +120,25 @@ class madlib {
     
     func getFilledIndices() -> [Int] {
         var indices = [Int]()
-        for i in titleLength..<words.count{
-            if words[i].hasPrefix("<"){
-                indices.append(i - titleLength)
+        var actualIndex = titleLength
+        var modifiedIndex = 0
+        var currWord = String()
+        
+        while actualIndex < words.count {
+            currWord = words[actualIndex]
+            if(words[actualIndex].hasPrefix("<")){
+                indices.append(modifiedIndex)
+                
+                while(!currWord.contains(">")){
+                    actualIndex += 1
+                    currWord = words[actualIndex]
+                }
             }
+            
+            modifiedIndex += 1
+            actualIndex += 1
         }
+        
         return indices
     }
     
@@ -134,13 +148,23 @@ class madlib {
         var blankIndex = 0;
         var currWord : String
         var completeString = "";
-        for i in titleLength..<words.count{
-            
+        
+        var i = titleLength
+        while i < words.count{
+            print("START: \(i)")
             currWord = words[i]
             
             if (currWord.hasPrefix("<")){
+                
                 completeString += " " + (blanks[blankIndex]?.2)!
                 blankIndex += 1
+                
+                while(!currWord.contains(">")){
+                    i += 1
+                    currWord = words[i]
+                    print(i)
+                }
+                
                 if(currWord.hasSuffix(".") || currWord.hasSuffix(";") || currWord.hasSuffix("!") || currWord.hasSuffix(",")){
                     completeString += currWord.suffix(1)
                 }
@@ -148,6 +172,7 @@ class madlib {
             } else {
                 completeString += " " + currWord
             }
+            i += 1
         }
         return completeString
     }
