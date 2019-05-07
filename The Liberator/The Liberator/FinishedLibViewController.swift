@@ -49,6 +49,14 @@ class FinishedLibViewController: UIViewController {
             textView.isEditable = false
         }
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"PurpleBG")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "PurpleBG")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
     }
     
     @IBAction func speakButton(_ sender: UIButton) {
