@@ -19,14 +19,15 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
-    var inProgressLibs = [String]()
+    var inProgressLibs = [String:String]()
+    var selectedKey = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
 
-        if let libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String] {
+        if let libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
             inProgressLibs = libs
             print("Yo, i got sum \(libs)")
         }
@@ -40,21 +41,44 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "keyCell", for: indexPath) as! InProgressCell
-        cell.keyLabel.text = inProgressLibs[indexPath.row]
-        print("shit should say \(inProgressLibs[indexPath.row])")
+        cell.keyLabel.text = Array(inProgressLibs)[indexPath.row].key
+        print("shit should say \(Array(inProgressLibs)[indexPath.row].key)")
         return cell
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedKey = Array(inProgressLibs)[indexPath.row].key
+        print(selectedKey)
+        
+//        let currentCell = tableView.cellForRow(at: indexPath) as! InProgressCell
+//        if let text = currentCell.keyLabel!.text {
+//            print("SELECTEDKEY \(selectedKey)")
+//            selectedKey = text
+//        }
+        //self.performSegue(withIdentifier: "toReCreate", sender: self)
+        
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReCreate" {
+            if let destinationVC = segue.destination as? CreateLibViewController {
+                
+                //need to manually reload the lib!
+                
+                //var lib = madlib(fileName: selectedKey)
+                
+                if let libData = UserDefaults.standard.value(forKey: selectedKey) as? Data {
+                    let decoder = JSONDecoder()
+                    if let loadedLib = try? decoder.decode(inProgressLib.self, from: libData){
+                        print("I'VE LOADED: \(loadedLib.fileName)")
+                    }
+                }
+                
+                destinationVC.libFileName = selectedKey
+            }
+        }
+    }
+
+    
 
 }

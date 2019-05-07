@@ -95,6 +95,10 @@ class madlib {
         return blankTypes.count
     }
     
+    func getFileName() -> String {
+        return fileName
+    }
+    
     func isComplete() -> Bool {
         for i in 0..<blanks.count{
             if(blanks[i]!.0 == false){
@@ -160,7 +164,7 @@ class madlib {
 
 /*BEFORE I FUCKING FORGET:
 when you hit save - Userdefaults has: key -> filename, data on blanks
- Userdefaults also needs list of saved [key]
+ Userdefaults also needs list of saved [key, filename]
  will display on saved screen by key
  when you click on it, ---> create lib will load NEW LIB from associated filename
                             then like, it will load FROM USERDEFAULTS the blanks to display

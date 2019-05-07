@@ -44,15 +44,20 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
             
             //need to add "if contains key don't fucking add" part here
             
-            //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
+            
             if let key = self.keyTextField?.text{
-                if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String] {
-                    libs.append(key)
+                
+                //saving the actual thing
+                //self.lib?.saveMaybe(key: key)
+                
+                //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
+                if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
+                    libs[key] = self.lib?.getFileName()
                     UserDefaults.standard.set(libs, forKey: "LibsInProgress")
                     print("I'm saving \(libs)")
                 } else {
-                    var libs = [String]()
-                    libs.append(key)
+                    var libs = [String:String]()
+                    libs[key] = self.lib?.getFileName()
                     UserDefaults.standard.set(libs, forKey: "LibsInProgress")
                     print("I'm saving \(libs)")
                 }
@@ -70,11 +75,10 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         if lib?.isComplete() == false {
             let alert = UIAlertController(title: "Not Complete!", message: "Must fill in all the blanks to see your madlib or press save progress to come back to it later", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-               self.performSegue(withIdentifier: "toFinished", sender: self)
+               
             }))
             self.present(alert, animated: true, completion: nil)
         }
-   
     }
     
     override func viewDidLoad() {
