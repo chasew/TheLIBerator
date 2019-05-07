@@ -307,53 +307,53 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-RJ-Igd">
-                                <rect key="frame" x="-41" y="211.99999999999997" width="481" height="387.33333333333331"/>
+                                <rect key="frame" x="-41" y="211.99999999999997" width="485" height="387.33333333333331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZY-Lr-OKe">
-                                        <rect key="frame" x="0.0" y="0.0" width="481" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="485" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V0u-Kp-UR9">
-                                        <rect key="frame" x="-2" y="20.333333333333329" width="485" height="31"/>
+                                        <rect key="frame" x="-2" y="20.333333333333329" width="489" height="31"/>
                                         <connections>
                                             <action selector="pitchValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="4NI-uB-iQ6"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flS-cU-dvw">
-                                        <rect key="frame" x="0.0" y="50.333333333333336" width="481" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="50.333333333333336" width="485" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WHv-ga-wOX">
-                                        <rect key="frame" x="-2" y="70.666666666666671" width="485" height="31"/>
+                                        <rect key="frame" x="-2" y="70.666666666666671" width="489" height="31"/>
                                         <connections>
                                             <action selector="volumeValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="qAg-PS-TCj"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rl-Ck-AxR">
-                                        <rect key="frame" x="0.0" y="100.66666666666667" width="481" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="100.66666666666667" width="485" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mQa-s8-wLy">
-                                        <rect key="frame" x="-2" y="121" width="485" height="31"/>
+                                        <rect key="frame" x="-2" y="121" width="489" height="31"/>
                                         <connections>
                                             <action selector="rateValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="4yy-9x-YsY"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-mK-NxZ">
-                                        <rect key="frame" x="0.0" y="151" width="481" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="151" width="485" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuN-K7-qcr">
-                                        <rect key="frame" x="0.0" y="171.33333333333337" width="481" height="216"/>
+                                        <rect key="frame" x="0.0" y="171.33333333333337" width="485" height="216"/>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -600,7 +600,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
                                             <font key="NSFont" size="24" name=".SFNSText"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

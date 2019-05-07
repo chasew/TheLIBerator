@@ -76,11 +76,11 @@ class FinishedLibViewController: UIViewController {
         homeButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
         homeButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
         
+        print("SDFUIHWEFJ\(lib?.key)")
         if(lib?.key != ""){
             TitleButton.setTitle(lib?.key, for: .normal)
             
-        }
-        else {
+        } else {
             TitleButton.setTitle("  " + "Untitled  ", for: .normal)
         }
         

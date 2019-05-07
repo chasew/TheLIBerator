@@ -82,8 +82,10 @@ class ViewFinishedLibsController: UIViewController, UITableViewDelegate, UITable
                     }
                 }
                 
-                ///lollllll I'm so sorry 
-                destinationVC.lib = madlib(fileName: file)
+                ///lollllll I'm so sorry
+                let lib = madlib(fileName: file)
+                lib.key = selectedKey
+                destinationVC.lib = lib
                 destinationVC.text = text
             }
         }

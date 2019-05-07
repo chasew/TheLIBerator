@@ -63,17 +63,16 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
                 if let key = self.keyTextField?.text{
                     //saving the actual thing
                     self.lib?.saveMaybe(key: key)
+                    self.lib!.key = key
                     
                     //adding key to list of keys (i.e. adding story "title" to list of in progress stories)
                     if var libs = UserDefaults.standard.value(forKey: "LibsInProgress") as? [String:String] {
                         libs[key] = self.lib?.getFileName()
                         UserDefaults.standard.set(libs, forKey: "LibsInProgress")
-                        print("I'm saving \(libs)")
                     } else {
                         var libs = [String:String]()
                         libs[key] = self.lib?.getFileName()
                         UserDefaults.standard.set(libs, forKey: "LibsInProgress")
-                        print("I'm saving \(libs)")
                     }
                 }
                 self.performSegue(withIdentifier: "createToHome", sender: self)
@@ -116,6 +115,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
                     //have not saved before; must enter key
                     if let key = self.finishedKeyTextField?.text {
+                        self.lib?.key = key
                         self.saveFinishedLib(key: key)
                     }
                     self.performSegue(withIdentifier: "toFinished", sender: self)
@@ -299,6 +299,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
             if let vc = segue.destination as? FinishedLibViewController {
                 vc.text = (lib?.getFullText())!
                 vc.lib = lib
+                
             }
         }
     }
