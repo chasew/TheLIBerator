@@ -14,6 +14,20 @@
 		37021C9722820C21000D57B8 /* Camping.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9022820C21000D57B8 /* Camping.txt */; };
 		37021C9A22820C7D000D57B8 /* christmasLib.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9822820C7D000D57B8 /* christmasLib.txt */; };
 		37021C9B22820C7D000D57B8 /* testLib.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9922820C7D000D57B8 /* testLib.txt */; };
+		37021CAB22821684000D57B8 /* speech.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9D22821682000D57B8 /* speech.txt */; };
+		37021CAC22821684000D57B8 /* bbq.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9E22821682000D57B8 /* bbq.txt */; };
+		37021CAD22821684000D57B8 /* donut.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021C9F22821682000D57B8 /* donut.txt */; };
+		37021CAE22821684000D57B8 /* locker.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA022821683000D57B8 /* locker.txt */; };
+		37021CAF22821684000D57B8 /* vacuum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA122821683000D57B8 /* vacuum.txt */; };
+		37021CB022821684000D57B8 /* hotDog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA222821683000D57B8 /* hotDog.txt */; };
+		37021CB122821684000D57B8 /* chicken.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA322821683000D57B8 /* chicken.txt */; };
+		37021CB222821684000D57B8 /* holiday.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA422821683000D57B8 /* holiday.txt */; };
+		37021CB322821684000D57B8 /* road.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA522821683000D57B8 /* road.txt */; };
+		37021CB422821684000D57B8 /* late.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA622821683000D57B8 /* late.txt */; };
+		37021CB522821684000D57B8 /* shamrocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA722821683000D57B8 /* shamrocks.txt */; };
+		37021CB622821684000D57B8 /* bus.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA822821683000D57B8 /* bus.txt */; };
+		37021CB722821684000D57B8 /* love.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CA922821683000D57B8 /* love.txt */; };
+		37021CB822821684000D57B8 /* flipFlops.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37021CAA22821684000D57B8 /* flipFlops.txt */; };
 		37BBB0882272590F004ACE5D /* LIBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBB0872272590F004ACE5D /* LIBModel.swift */; };
 		37BBB08B2273AD83004ACE5D /* LIBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBB0872272590F004ACE5D /* LIBModel.swift */; };
 		37BBB08D227E5F34004ACE5D /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBB08C227E5F34004ACE5D /* CatagoryCell.swift */; };
@@ -56,6 +70,20 @@
 		37021C9022820C21000D57B8 /* Camping.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Camping.txt; sourceTree = "<group>"; };
 		37021C9822820C7D000D57B8 /* christmasLib.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = christmasLib.txt; sourceTree = "<group>"; };
 		37021C9922820C7D000D57B8 /* testLib.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testLib.txt; sourceTree = "<group>"; };
+		37021C9D22821682000D57B8 /* speech.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speech.txt; sourceTree = "<group>"; };
+		37021C9E22821682000D57B8 /* bbq.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bbq.txt; sourceTree = "<group>"; };
+		37021C9F22821682000D57B8 /* donut.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donut.txt; sourceTree = "<group>"; };
+		37021CA022821683000D57B8 /* locker.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = locker.txt; sourceTree = "<group>"; };
+		37021CA122821683000D57B8 /* vacuum.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vacuum.txt; sourceTree = "<group>"; };
+		37021CA222821683000D57B8 /* hotDog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hotDog.txt; sourceTree = "<group>"; };
+		37021CA322821683000D57B8 /* chicken.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chicken.txt; sourceTree = "<group>"; };
+		37021CA422821683000D57B8 /* holiday.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = holiday.txt; sourceTree = "<group>"; };
+		37021CA522821683000D57B8 /* road.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = road.txt; sourceTree = "<group>"; };
+		37021CA622821683000D57B8 /* late.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = late.txt; sourceTree = "<group>"; };
+		37021CA722821683000D57B8 /* shamrocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shamrocks.txt; sourceTree = "<group>"; };
+		37021CA822821683000D57B8 /* bus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bus.txt; sourceTree = "<group>"; };
+		37021CA922821683000D57B8 /* love.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = love.txt; sourceTree = "<group>"; };
+		37021CAA22821684000D57B8 /* flipFlops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = flipFlops.txt; sourceTree = "<group>"; };
 		37BBB0872272590F004ACE5D /* LIBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIBModel.swift; sourceTree = "<group>"; };
 		37BBB08C227E5F34004ACE5D /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
 		37BBB0942280C084004ACE5D /* InProgressLibsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressLibsViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +131,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37021C9C228215E9000D57B8 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				37021C9E22821682000D57B8 /* bbq.txt */,
+				37021CA822821683000D57B8 /* bus.txt */,
+				37021CA322821683000D57B8 /* chicken.txt */,
+				37021C9F22821682000D57B8 /* donut.txt */,
+				37021CAA22821684000D57B8 /* flipFlops.txt */,
+				37021CA422821683000D57B8 /* holiday.txt */,
+				37021CA222821683000D57B8 /* hotDog.txt */,
+				37021CA622821683000D57B8 /* late.txt */,
+				37021CA022821683000D57B8 /* locker.txt */,
+				37021CA922821683000D57B8 /* love.txt */,
+				37021CA522821683000D57B8 /* road.txt */,
+				37021CA722821683000D57B8 /* shamrocks.txt */,
+				37021C9D22821682000D57B8 /* speech.txt */,
+				37021CA122821683000D57B8 /* vacuum.txt */,
+				37021C9822820C7D000D57B8 /* christmasLib.txt */,
+				37021C9922820C7D000D57B8 /* testLib.txt */,
+				37021C9022820C21000D57B8 /* Camping.txt */,
+				37021C8E22820C20000D57B8 /* Dream Man.txt */,
+				37021C8C22820C20000D57B8 /* Love Letter 3.txt */,
+				37021C8A22820C20000D57B8 /* Love Letter 4.txt */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		D3DE1C7C226E68E600C170E4 = {
 			isa = PBXGroup;
 			children = (
@@ -137,15 +192,10 @@
 				40501AC2227149F700686B8B /* CreateLibViewController.swift */,
 				40501AC022712F3300686B8B /* CategoriesViewController.swift */,
 				37BBB08C227E5F34004ACE5D /* CatagoryCell.swift */,
+				37021C9C228215E9000D57B8 /* Libs */,
 				D3DE1C8F226E68E700C170E4 /* Assets.xcassets */,
 				D3DE1C91226E68E700C170E4 /* LaunchScreen.storyboard */,
 				D3DE1C94226E68E700C170E4 /* Info.plist */,
-				37021C9822820C7D000D57B8 /* christmasLib.txt */,
-				37021C9922820C7D000D57B8 /* testLib.txt */,
-				37021C9022820C21000D57B8 /* Camping.txt */,
-				37021C8E22820C20000D57B8 /* Dream Man.txt */,
-				37021C8C22820C20000D57B8 /* Love Letter 3.txt */,
-				37021C8A22820C20000D57B8 /* Love Letter 4.txt */,
 			);
 			path = "The Liberator";
 			sourceTree = "<group>";
@@ -272,14 +322,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37021CB622821684000D57B8 /* bus.txt in Resources */,
+				37021CAE22821684000D57B8 /* locker.txt in Resources */,
 				37021C9722820C21000D57B8 /* Camping.txt in Resources */,
+				37021CB222821684000D57B8 /* holiday.txt in Resources */,
+				37021CAD22821684000D57B8 /* donut.txt in Resources */,
 				37021C9322820C21000D57B8 /* Love Letter 3.txt in Resources */,
+				37021CB722821684000D57B8 /* love.txt in Resources */,
 				D3DE1C93226E68E700C170E4 /* LaunchScreen.storyboard in Resources */,
+				37021CB522821684000D57B8 /* shamrocks.txt in Resources */,
 				37021C9522820C21000D57B8 /* Dream Man.txt in Resources */,
+				37021CAB22821684000D57B8 /* speech.txt in Resources */,
+				37021CAC22821684000D57B8 /* bbq.txt in Resources */,
+				37021CB022821684000D57B8 /* hotDog.txt in Resources */,
 				D3DE1C90226E68E700C170E4 /* Assets.xcassets in Resources */,
+				37021CB822821684000D57B8 /* flipFlops.txt in Resources */,
+				37021CAF22821684000D57B8 /* vacuum.txt in Resources */,
+				37021CB422821684000D57B8 /* late.txt in Resources */,
 				37021C9122820C21000D57B8 /* Love Letter 4.txt in Resources */,
 				37021C9B22820C7D000D57B8 /* testLib.txt in Resources */,
 				D3DE1C8E226E68E600C170E4 /* Main.storyboard in Resources */,
+				37021CB122821684000D57B8 /* chicken.txt in Resources */,
+				37021CB322821684000D57B8 /* road.txt in Resources */,
 				37021C9A22820C7D000D57B8 /* christmasLib.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

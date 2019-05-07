@@ -1,0 +1,4 @@
+Holiday
+Did you guys eat <FOOD> yesterday for <HOLIDAY>?
+It was so <DESCRIPTOR> last night. I ended up
+going home pretty <TIME>.

@@ -18,12 +18,14 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     let catagories = ["Camping", "Love", "Holidays", "One Liners", "Funny", "Misc"]
     
     //catagory -> list of libs 
-    let fileMap = ["Camping": ["Yeah"],
-                   "Love": ["Yeah"],
-                   "Holidays": ["Yeah"],
-                   "One Liners": ["Yeah"],
-                   "Funny": ["Yeah"],
-                   "Misc": ["Yeah"],]
+    let fileMap = [
+                    "Camping": ["Camping"],
+                   "Love": ["Love Letter 3", "Love Letter 4","love"],
+                   "Holidays": ["christmasLib","holiday","shamrocks"],
+                   "One Liners": ["bus","chicken","donut","flipFlops"],
+                   "Funny": ["bbq","hotDog","late","speech","Dream Man"],
+                   "Misc": ["locker","road","vacuum",]
+                    ]
     
     let catagoryImages: [UIImage] = [
         UIImage(named: "camping")!,
@@ -74,10 +76,15 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreate" {
             if let destinationVC = segue.destination as? CreateLibViewController {
-                //YOU NEED TO GIVE IT A FILENAME HERE OK
-                destinationVC.libFileName = "Camping"
+                destinationVC.libFileName = pickRandomLib(catagory: selected)
             }
         }
+    }
+    
+    func pickRandomLib(catagory : String) -> String{
+        let libs = fileMap[catagory]
+        let randomIndex = Int.random(in: 0..<libs!.count)
+        return libs![randomIndex]
     }
     
 
