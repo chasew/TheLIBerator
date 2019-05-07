@@ -15,15 +15,23 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var selected = String()
     
-    let catagories = ["testLib", "christmasLib", "Cata 3", "Cata 4", "Cata 5", "Cata 6"]
+    let catagories = ["Camping", "Love", "Holidays", "One Liners", "Funny", "Misc"]
+    
+    //catagory -> list of libs 
+    let fileMap = ["Camping": ["Yeah"],
+                   "Love": ["Yeah"],
+                   "Holidays": ["Yeah"],
+                   "One Liners": ["Yeah"],
+                   "Funny": ["Yeah"],
+                   "Misc": ["Yeah"],]
     
     let catagoryImages: [UIImage] = [
+        UIImage(named: "camping")!,
+        UIImage(named: "love")!,
         UIImage(named: "holidaze")!,
-        UIImage(named: "holidaze")!,
-        UIImage(named: "holidaze")!,
-        UIImage(named: "holidaze")!,
-        UIImage(named: "holidaze")!,
-        UIImage(named: "holidaze")!
+        UIImage(named: "oneline")!,
+        UIImage(named: "funny")!,
+        UIImage(named: "misc")!
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +74,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreate" {
             if let destinationVC = segue.destination as? CreateLibViewController {
-                //change this as such to give it a file name after you know what is selected,,,
-                destinationVC.libFileName = selected
+                //YOU NEED TO GIVE IT A FILENAME HERE OK
+                destinationVC.libFileName = "Camping"
             }
         }
     }

@@ -59,7 +59,7 @@ class madlib {
         }
         
         do {
-            let regex = try NSRegularExpression(pattern: "<[A-Z ]+>")
+            let regex = try NSRegularExpression(pattern: "<[A-Z ()\\-]+>")
             let nsString = theWholeString as NSString
             let results = regex.matches(in: theWholeString, range: NSRange(location: 0, length: nsString.length))
             blankTypes = results.map {nsString.substring(with: $0.range)}
@@ -71,7 +71,7 @@ class madlib {
             let blankTypeDisplay = blankTypes[i].lowercased()
             var actualBlankDisplay = "something went wrong, lol"
             do {
-                let regexBCTHERESNOSUBSTRING = try NSRegularExpression(pattern: "[a-z ]+")
+                let regexBCTHERESNOSUBSTRING = try NSRegularExpression(pattern: "[a-z ()\\-]+")
                 let nsString = blankTypeDisplay as NSString
                 let mysteryObject = regexBCTHERESNOSUBSTRING.firstMatch(in: blankTypeDisplay, range: NSRange(location: 0, length: nsString.length))
                 actualBlankDisplay = nsString.substring(with: mysteryObject!.range)

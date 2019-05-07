@@ -17,6 +17,7 @@ class finishedTitleCell: UITableViewCell {
 class ViewFinishedLibsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backButton: UIButton!
     
 
     var finishedLibs = [String:String]()
@@ -33,7 +34,20 @@ class ViewFinishedLibsController: UIViewController, UITableViewDelegate, UITable
             finishedLibs = libs
             print("INTERESTING \(finishedLibs)")
         }
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"RedBlueBG")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "RedBlueBG")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
        
+        backButton.layer.cornerRadius = 10
+        backButton.layer.borderWidth = 3
+        backButton.layer.backgroundColor = UIColor(red: 0.8745, green: 0.8275, blue: 1, alpha: 1.0).cgColor
+        backButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
+        backButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

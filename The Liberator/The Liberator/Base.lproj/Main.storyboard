@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-Bs-nhC">
-                                <rect key="frame" x="130" y="380" width="115" height="141"/>
+                                <rect key="frame" x="130" y="404" width="115" height="141"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-1r-bq8">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
@@ -29,14 +29,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-dG-gio">
-                                        <rect key="frame" x="10.666666666666664" y="37" width="78" height="30"/>
+                                        <rect key="frame" x="0.0" y="37" width="115" height="30"/>
                                         <state key="normal" title="In Progress"/>
                                         <connections>
                                             <segue destination="IfI-iC-q02" kind="show" id="60T-MI-fAZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M3-f3-fEK">
-                                        <rect key="frame" x="32.666666666666664" y="74" width="33.999999999999993" height="30"/>
+                                        <rect key="frame" x="0.0" y="74" width="115" height="30"/>
                                         <state key="normal" title="View"/>
                                         <connections>
                                             <segue destination="CGa-dH-q8Z" kind="show" id="cZn-pV-V36"/>
@@ -78,9 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5n-TM-7C7">
-                                <rect key="frame" x="16" y="94" width="343" height="428"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K5n-TM-7C7">
+                                <rect key="frame" x="16" y="94" width="343" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" id="Woj-XW-YBg" customClass="InProgressCell" customModule="The_Liberator" customModuleProvider="target">
@@ -108,9 +107,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db2-qb-tpX">
-                                <rect key="frame" x="22" y="45" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db2-qb-tpX">
+                                <rect key="frame" x="22" y="54" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="mg3-Ik-2Od"/>
@@ -118,16 +116,27 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K5n-TM-7C7" firstAttribute="top" secondItem="PjD-mv-11V" secondAttribute="top" constant="50" id="25D-a4-Z5y"/>
+                            <constraint firstItem="db2-qb-tpX" firstAttribute="leading" secondItem="PjD-mv-11V" secondAttribute="leading" constant="22" id="2jF-u5-2Oh"/>
+                            <constraint firstItem="PjD-mv-11V" firstAttribute="trailing" secondItem="db2-qb-tpX" secondAttribute="trailing" constant="319" id="CUg-Ir-JAs"/>
+                            <constraint firstItem="PjD-mv-11V" firstAttribute="bottom" secondItem="K5n-TM-7C7" secondAttribute="bottom" constant="67" id="eFA-Uu-O02"/>
+                            <constraint firstItem="PjD-mv-11V" firstAttribute="trailing" secondItem="K5n-TM-7C7" secondAttribute="trailing" constant="16" id="ib0-ww-9Nd"/>
+                            <constraint firstItem="K5n-TM-7C7" firstAttribute="centerX" secondItem="PjD-mv-11V" secondAttribute="centerX" id="jGf-x0-BNM"/>
+                            <constraint firstItem="db2-qb-tpX" firstAttribute="top" secondItem="PjD-mv-11V" secondAttribute="top" constant="10" id="u3O-cd-MVY"/>
+                            <constraint firstItem="K5n-TM-7C7" firstAttribute="leading" secondItem="PjD-mv-11V" secondAttribute="leading" constant="16" id="uU4-ND-YvF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PjD-mv-11V"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="db2-qb-tpX" id="cvV-pe-5dq"/>
                         <outlet property="tableView" destination="K5n-TM-7C7" id="igO-p7-77K"/>
                         <segue destination="eMY-Vd-WOh" kind="show" identifier="toReCreate" id="VZJ-de-RIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCP-06-Hup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="133.5832083958021"/>
+            <point key="canvasLocation" x="996" y="133.00492610837438"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nZ6-Hv-EOi">
@@ -377,9 +386,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouj-k3-8IS">
-                                <rect key="frame" x="16" y="50" width="77" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouj-k3-8IS">
+                                <rect key="frame" x="16" y="54" width="77" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Hjt-lX-Bzy"/>
@@ -418,14 +426,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Fwc-de-N1F" firstAttribute="trailing" secondItem="Ouj-k3-8IS" secondAttribute="trailing" constant="282" id="6EN-27-g0F"/>
+                            <constraint firstItem="Ouj-k3-8IS" firstAttribute="leading" secondItem="Fwc-de-N1F" secondAttribute="leading" constant="16" id="F2S-6k-WCf"/>
                             <constraint firstItem="4Lx-cB-vKL" firstAttribute="leading" secondItem="Fwc-de-N1F" secondAttribute="leading" constant="16" id="SNe-ug-y4M"/>
                             <constraint firstItem="Fwc-de-N1F" firstAttribute="trailing" secondItem="4Lx-cB-vKL" secondAttribute="trailing" constant="16" id="WR3-fh-emA"/>
                             <constraint firstItem="Fwc-de-N1F" firstAttribute="bottom" secondItem="4Lx-cB-vKL" secondAttribute="bottom" constant="49" id="XrX-mK-8J5"/>
+                            <constraint firstItem="Ouj-k3-8IS" firstAttribute="top" secondItem="Fwc-de-N1F" secondAttribute="top" constant="10" id="hC4-ud-yaU"/>
                             <constraint firstItem="4Lx-cB-vKL" firstAttribute="top" secondItem="Fwc-de-N1F" secondAttribute="top" constant="100" id="iCh-Jo-3Aw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fwc-de-N1F"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Ouj-k3-8IS" id="SZS-la-k3q"/>
                         <outlet property="tableView" destination="4Lx-cB-vKL" id="vMk-VT-sQU"/>
                         <segue destination="Y9i-WS-ceK" kind="show" identifier="savedToFinished" id="8Qp-ui-7PM"/>
                     </connections>
@@ -442,14 +454,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-7M-jaF">
-                                <rect key="frame" x="24" y="33" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="sQy-EU-zae" kind="show" id="3gu-AF-GsW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5g-WW-3ex">
                                 <rect key="frame" x="49" y="53" width="277" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -508,13 +512,13 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-uR-gDh">
-                                <rect key="frame" x="95" y="647" width="184" height="5"/>
+                                <rect key="frame" x="95" y="758" width="184" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="RUk-md-znC"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-pg-sLV">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-pg-sLV">
                                 <rect key="frame" x="102" y="582" width="171" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4M-PP-WLs">
@@ -539,7 +543,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-nn-ARv">
-                                <rect key="frame" x="22" y="30" width="34" height="30"/>
+                                <rect key="frame" x="22" y="54" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="sQy-EU-zae" kind="show" id="vyO-Lq-3UJ"/>
@@ -553,6 +557,7 @@
                             <constraint firstItem="7lg-pg-sLV" firstAttribute="top" secondItem="xzL-uz-xJa" secondAttribute="bottom" constant="20" id="5Cm-q3-Zzc"/>
                             <constraint firstItem="sKe-uR-gDh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M4M-PP-WLs" secondAttribute="bottom" constant="25" id="8Ex-As-pvm"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="sKe-uR-gDh" secondAttribute="trailing" constant="96" id="ELa-SK-xjD"/>
+                            <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="1JD-nn-ARv" secondAttribute="trailing" constant="319" id="F82-Fp-5Nf"/>
                             <constraint firstItem="7lg-pg-sLV" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="GmY-SN-nVU"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="16" id="MT8-nK-twt"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="Ygl-TG-pgG"/>
@@ -638,9 +643,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YCy-EL-JFt"/>
+        <segue reference="8Qp-ui-7PM"/>
         <segue reference="VZJ-de-RIQ"/>
-        <segue reference="3gu-AF-GsW"/>
-        <segue reference="mg3-Ik-2Od"/>
+        <segue reference="Ch4-Sd-U34"/>
+        <segue reference="Hjt-lX-Bzy"/>
     </inferredMetricsTieBreakers>
 </document>
