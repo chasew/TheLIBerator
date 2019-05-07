@@ -31,6 +31,9 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     @IBOutlet weak var spaceView: UIView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
     
     var keyTextField: UITextField?
     
@@ -90,6 +93,32 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"YellowBG")!)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "YellowBG")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+        backButton.layer.cornerRadius = 10
+        backButton.layer.borderWidth = 3
+        backButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
+        backButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
+        backButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
+        
+        saveButton.layer.cornerRadius = 10
+        saveButton.layer.borderWidth = 3
+        saveButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
+        saveButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
+        saveButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
+        
+        finishButton.layer.cornerRadius = 10
+        finishButton.layer.borderWidth = 3
+        finishButton.layer.backgroundColor = UIColor(red: 1, green: 0.9216, blue: 0.749, alpha: 1.0).cgColor
+        finishButton.layer.borderColor = UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0).cgColor
+        finishButton.setTitleColor(UIColor(red: 1, green: 0.498, blue: 0, alpha: 1.0), for: UIControl.State.normal)
     }
  
     

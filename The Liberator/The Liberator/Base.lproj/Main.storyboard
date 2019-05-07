@@ -18,34 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-Bs-nhC">
-                                <rect key="frame" x="128.5" y="292.5" width="99" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-Bs-nhC">
+                                <rect key="frame" x="130" y="380" width="115" height="141"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-1r-bq8">
-                                        <rect key="frame" x="34" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
                                         <state key="normal" title="New"/>
                                         <connections>
                                             <segue destination="sQy-EU-zae" kind="show" id="Ch4-Sd-U34"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-dG-gio">
-                                        <rect key="frame" x="10.5" y="37" width="78" height="30"/>
+                                        <rect key="frame" x="0.0" y="37" width="115" height="30"/>
                                         <state key="normal" title="In Progress"/>
                                         <connections>
                                             <segue destination="IfI-iC-q02" kind="show" id="60T-MI-fAZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M3-f3-fEK">
-                                        <rect key="frame" x="32.5" y="74" width="34" height="30"/>
+                                        <rect key="frame" x="0.0" y="74" width="115" height="30"/>
                                         <state key="normal" title="View"/>
                                         <connections>
                                             <segue destination="Rjh-pu-XsO" kind="show" id="pBA-Jq-eNB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvW-Lg-05n">
-                                        <rect key="frame" x="0.0" y="111" width="99" height="30"/>
-                                        <state key="normal" title="Voice Settings"/>
+                                        <rect key="frame" x="0.0" y="111" width="115" height="30"/>
+                                        <state key="normal" title="  Voice Settings  "/>
                                         <connections>
                                             <segue destination="u1J-3U-1cH" kind="show" id="oMW-Tb-cxZ"/>
                                         </connections>
@@ -54,12 +53,17 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ni4-Bs-nhC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="360" id="aBE-rb-Eb4"/>
+                            <constraint firstItem="ni4-Bs-nhC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xe3-JJ-nyI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="NewButton" destination="DSv-1r-bq8" id="eN6-lI-vbm"/>
                         <outlet property="ProgressButton" destination="al9-dG-gio" id="Cec-Y2-Lkn"/>
                         <outlet property="ViewButton" destination="6M3-f3-fEK" id="CjA-Ge-X8S"/>
+                        <outlet property="VoiceSettingsButton" destination="IvW-Lg-05n" id="Arg-ae-BLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -453,14 +457,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-7M-jaF">
-                                <rect key="frame" x="24" y="33" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="sQy-EU-zae" kind="show" id="3gu-AF-GsW"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-uR-gDh">
                                 <rect key="frame" x="95" y="647" width="184" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,18 +465,18 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-pg-sLV">
-                                <rect key="frame" x="110" y="582" width="155" height="40"/>
+                                <rect key="frame" x="102" y="582" width="171" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4M-PP-WLs">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="40"/>
-                                        <state key="normal" title="Save Progress"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
+                                        <state key="normal" title=" Save Progress "/>
                                         <connections>
                                             <action selector="SaveButton:" destination="eMY-Vd-WOh" eventType="touchUpInside" id="7oq-8b-8ix"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRs-kT-tbo">
-                                        <rect key="frame" x="114" y="0.0" width="41" height="40"/>
-                                        <state key="normal" title="Finish"/>
+                                        <rect key="frame" x="122" y="0.0" width="49" height="40"/>
+                                        <state key="normal" title=" Finish "/>
                                         <connections>
                                             <action selector="FinishButton:" destination="eMY-Vd-WOh" eventType="touchUpInside" id="z6z-6J-hFC"/>
                                             <segue destination="Y9i-WS-ceK" kind="show" identifier="toFinished" id="YCy-EL-JFt"/>
@@ -489,26 +485,42 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6WQ-cS-Pnp"/>
+                                    <constraint firstItem="zRs-kT-tbo" firstAttribute="leading" secondItem="M4M-PP-WLs" secondAttribute="trailing" constant="30" id="gxH-BB-PvM"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-nn-ARv">
+                                <rect key="frame" x="22" y="30" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="sQy-EU-zae" kind="show" id="vyO-Lq-3UJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sKe-uR-gDh" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="95" id="0xQ-1o-4Cq"/>
+                            <constraint firstItem="1JD-nn-ARv" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="22" id="2p1-OS-MhW"/>
                             <constraint firstItem="7lg-pg-sLV" firstAttribute="top" secondItem="xzL-uz-xJa" secondAttribute="bottom" constant="20" id="5Cm-q3-Zzc"/>
+                            <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="1JD-nn-ARv" secondAttribute="trailing" constant="319" id="7Ta-yb-mzg"/>
                             <constraint firstItem="sKe-uR-gDh" firstAttribute="top" secondItem="M4M-PP-WLs" secondAttribute="bottom" constant="25" id="8Ex-As-pvm"/>
+                            <constraint firstItem="M4M-PP-WLs" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="102" id="94f-lK-QYa"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="sKe-uR-gDh" secondAttribute="trailing" constant="96" id="ELa-SK-xjD"/>
                             <constraint firstItem="7lg-pg-sLV" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="GmY-SN-nVU"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="leading" secondItem="ViC-MF-HTO" secondAttribute="leading" constant="16" id="MT8-nK-twt"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="centerX" secondItem="6SH-bw-2Sl" secondAttribute="centerX" id="Ygl-TG-pgG"/>
                             <constraint firstItem="xzL-uz-xJa" firstAttribute="top" secondItem="ViC-MF-HTO" secondAttribute="top" constant="62" id="dcg-pB-1DT"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="xzL-uz-xJa" secondAttribute="trailing" constant="16" id="eck-Qx-5uU"/>
+                            <constraint firstItem="ViC-MF-HTO" firstAttribute="trailing" secondItem="zRs-kT-tbo" secondAttribute="trailing" constant="102" id="pCE-wF-ttV"/>
+                            <constraint firstItem="1JD-nn-ARv" firstAttribute="top" secondItem="ViC-MF-HTO" secondAttribute="top" constant="10" id="uOC-k7-sZF"/>
                             <constraint firstItem="ViC-MF-HTO" firstAttribute="bottom" secondItem="sKe-uR-gDh" secondAttribute="bottom" constant="15" id="wrs-y3-SUc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ViC-MF-HTO"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="1JD-nn-ARv" id="MMS-a7-uWh"/>
                         <outlet property="bottomSpace" destination="wrs-y3-SUc" id="oMJ-WB-j8D"/>
+                        <outlet property="finishButton" destination="zRs-kT-tbo" id="3ju-bA-DvQ"/>
+                        <outlet property="saveButton" destination="M4M-PP-WLs" id="KBj-5g-qXi"/>
                         <outlet property="spaceView" destination="sKe-uR-gDh" id="3lN-32-ddg"/>
                         <outlet property="tableView" destination="xzL-uz-xJa" id="oXt-fX-Foj"/>
                         <outlet property="view" destination="6SH-bw-2Sl" id="W7k-zl-7q5"/>
@@ -534,24 +546,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRi-tb-D6I">
-                                <rect key="frame" x="25" y="40" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="QPH-UB-e4d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Zx-aRW">
-                                <rect key="frame" x="292" y="40" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Speak"/>
-                                <connections>
-                                    <action selector="speakButton:" destination="Y9i-WS-ceK" eventType="touchUpInside" id="FVD-dA-BKf"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skH-IA-sfj">
+                                <rect key="frame" x="148" y="39" width="84" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Zx-aRW">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                                        <state key="normal" title="Speak"/>
+                                        <connections>
+                                            <action selector="speakButton:" destination="Y9i-WS-ceK" eventType="touchUpInside" id="FVD-dA-BKf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRi-tb-D6I">
+                                        <rect key="frame" x="43" y="0.0" width="41" height="30"/>
+                                        <state key="normal" title="Home"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="QPH-UB-e4d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fRi-tb-D6I" firstAttribute="top" secondItem="skH-IA-sfj" secondAttribute="top" constant="10" id="0BY-eq-OS4"/>
+                                    <constraint firstItem="fRi-tb-D6I" firstAttribute="leading" secondItem="RFQ-Zx-aRW" secondAttribute="trailing" constant="30" id="dNK-dF-u95"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z54-3J-6BZ" firstAttribute="trailing" secondItem="skH-IA-sfj" secondAttribute="trailing" constant="143" id="0tD-3S-TUL"/>
+                            <constraint firstItem="skH-IA-sfj" firstAttribute="leading" secondItem="z54-3J-6BZ" secondAttribute="leading" constant="148" id="Br2-ij-UGt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z54-3J-6BZ"/>
                     </view>
                     <connections>
@@ -565,8 +588,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VZJ-de-RIQ"/>
-        <segue reference="3gu-AF-GsW"/>
-        <segue reference="mg3-Ik-2Od"/>
+        <segue reference="pwQ-gK-eZI"/>
+        <segue reference="vyO-Lq-3UJ"/>
+        <segue reference="QPH-UB-e4d"/>
     </inferredMetricsTieBreakers>
 </document>
