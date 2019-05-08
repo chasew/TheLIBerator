@@ -93,7 +93,6 @@ class ViewController: UIViewController {
     ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("toRandomFinished")
         if segue.identifier == "toRandomFinished" {
             
             let randomC = Int.random(in: 0..<fileMap.count)
@@ -103,7 +102,6 @@ class ViewController: UIViewController {
             let randomIndex = Int.random(in: 0..<libs!.count)
             
             let file = libs![randomIndex]
-            print(file)
             let lib = madlib(fileName: file)
             lib.key = "Random Lib"
             

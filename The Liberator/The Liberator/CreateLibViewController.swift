@@ -47,7 +47,6 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     var finishedKeyTextField: UITextField?
     
     @IBAction func SaveButton(_ sender: Any) {
-        print("dude, wtf?")
         //SAVE NEW
         if(lib?.key == "") {
             let alert = UIAlertController(title: "Save Progress", message: "Enter a title for your madlib", preferredStyle: .alert)
@@ -80,7 +79,6 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
             self.present(alert, animated: true, completion: nil)
         
         } else { //ALREADY SAVED LOL
-            print("I SAVED YOU ALREADY")
             let alert = UIAlertController(title: "Save Progress", message: "Saving \"\(lib!.key)\"", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in }))
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
@@ -240,9 +238,7 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
         let rawAnimationCurve = (notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
         let animationCurve = UIView.AnimationOptions.init(rawValue: UInt(rawAnimationCurve))
         
-        print("before: \(bottomSpace.constant)")
         bottomSpace.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
-        print("after: \(bottomSpace.constant)")
         
         UIView.animate(withDuration: animationDuration, delay: 0.0, options: [.beginFromCurrentState, animationCurve], animations: {
             self.view.layoutIfNeeded()
@@ -294,7 +290,6 @@ class CreateLibViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("To finish")
         if segue.identifier == "toFinished" {
             if let vc = segue.destination as? FinishedLibViewController {
                 vc.text = (lib?.getFullText())!

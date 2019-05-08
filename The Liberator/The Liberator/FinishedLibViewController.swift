@@ -37,18 +37,14 @@ class FinishedLibViewController: UIViewController {
         textView.textAlignment = NSTextAlignment.justified
         
         let indices = (lib?.getFilledIndices())!
-        print("wtf? \(indices)")
         let words = text.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
         
         let wordsUpdate = words.filter {$0 != ""}
-        print(wordsUpdate)
         let attributedString = NSMutableAttributedString.init(string: text)
         for index in indices {
             let range = (text as NSString).range(of: wordsUpdate[index])
             attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.orange, range: range)
             attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 12), range: range)
-            //print(range)
-            //print(words[index])
             textView.attributedText = attributedString
             textView.isUserInteractionEnabled = false
             textView.isEditable = false
@@ -76,7 +72,6 @@ class FinishedLibViewController: UIViewController {
         homeButton.layer.borderColor = UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0).cgColor
         homeButton.setTitleColor(UIColor(red: 0.2824, green: 0, blue: 1, alpha: 1.0), for: UIControl.State.normal)
         
-        print("SDFUIHWEFJ\(lib?.key)")
         if(lib?.key != ""){
             TitleButton.setTitle(lib?.key, for: .normal)
             
@@ -95,11 +90,11 @@ class FinishedLibViewController: UIViewController {
     @IBAction func speakButton(_ sender: UIButton) {
         let utterance = AVSpeechUtterance(string: text)
         switch  (defaults.object(forKey:"Language") as? String)! {
-        case "English":
+        case "American":
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        case "Spanish":
+        case "Spanish - Mexico":
             utterance.voice = AVSpeechSynthesisVoice(language: "es")
-        case "Chinese":
+        case "Chinese - simplified":
             utterance.voice = AVSpeechSynthesisVoice(language: "zh-Hans")
         case "Hebrew":
             utterance.voice = AVSpeechSynthesisVoice(language: "he")
@@ -111,9 +106,6 @@ class FinishedLibViewController: UIViewController {
             utterance.rate = settings["rate"]!
             utterance.pitchMultiplier = settings["pitch"]!
             utterance.volume = settings["volume"]!
-            
-            print("RATE \(utterance.rate)")
-            
         }
         
         synthesizer.speak(utterance)

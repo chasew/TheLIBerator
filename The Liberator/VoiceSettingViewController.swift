@@ -29,9 +29,6 @@ class VoiceSettingViewController: UIViewController, UIPickerViewDelegate, UIPick
         if (UserDefaults.standard.value(forKey: "Language") as? String) != nil{
             UserDefaults.standard.set(pickerData[row], forKey: "Language")
         }
-        //print("hopefully this is one thing haha")
-        
-        //language = (pickerData[row])
         return pickerData[row]
     }
     

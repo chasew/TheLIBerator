@@ -8,8 +8,6 @@
 
 import Foundation
 
-//basically a bunch of model classes - we designing on the FLY BOIIIII
-
 class madlib {
     
     var key : String
@@ -26,7 +24,6 @@ class madlib {
     
     
     //init a blank madlib from file: first word is the title then hopefully does the rest right
-    //haha, crying
     init(){
         //this does nothing :)
         self.fileName = "F"
@@ -152,7 +149,6 @@ class madlib {
         
         var i = titleLength
         while i < words.count{
-            print("START: \(i)")
             currWord = words[i]
             
             if (currWord.hasPrefix("<")){
@@ -163,7 +159,6 @@ class madlib {
                 while(!currWord.contains(">")){
                     i += 1
                     currWord = words[i]
-                    print(i)
                 }
                 
                 if(currWord.hasSuffix(".") || currWord.hasSuffix(";") || currWord.hasSuffix("!") || currWord.hasSuffix(",")){

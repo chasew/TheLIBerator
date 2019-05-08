@@ -32,7 +32,6 @@ class ViewFinishedLibsController: UIViewController, UITableViewDelegate, UITable
         
         if let libs = UserDefaults.standard.value(forKey: "FinishedLibs") as? [String:String] {
             finishedLibs = libs
-            print("INTERESTING \(finishedLibs)")
         }
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"RedBlueBG")!)

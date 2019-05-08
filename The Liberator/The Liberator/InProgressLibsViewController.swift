@@ -54,7 +54,6 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "keyCell", for: indexPath) as! InProgressCell
         cell.keyLabel.text = Array(inProgressLibs)[indexPath.row].key
-        print("shit should say \(Array(inProgressLibs)[indexPath.row].key)")
         return cell
     }
     
@@ -81,7 +80,6 @@ class InProgressLibsViewController: UIViewController, UITableViewDelegate, UITab
                 if let savedLib = UserDefaults.standard.value(forKey: selectedKey) as? Data {
                     let decoder = JSONDecoder()
                     if let loadedLib = try? decoder.decode(inProgressLib.self, from: savedLib) {
-                        print("SDKUHIFKSUEFHSKDFJSKDHF\(loadedLib.blankTexts)")
                         for i in 0..<lib.getNumBlanks(){
                             if let text = loadedLib.blankTexts[i] {
                                 lib.fillBlank(position: i, text: text)
