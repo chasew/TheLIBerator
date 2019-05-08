@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-Bs-nhC">
-                                <rect key="frame" x="130" y="404" width="115" height="141"/>
+                                <rect key="frame" x="130" y="404" width="115" height="178"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-1r-bq8">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
@@ -42,8 +42,15 @@
                                             <segue destination="CGa-dH-q8Z" kind="show" id="cZn-pV-V36"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvW-Lg-05n">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-4P-EWW">
                                         <rect key="frame" x="0.0" y="111" width="115" height="30"/>
+                                        <state key="normal" title="Random"/>
+                                        <connections>
+                                            <segue destination="Y9i-WS-ceK" kind="show" identifier="toRandomFinished" id="oKY-pn-7W4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvW-Lg-05n">
+                                        <rect key="frame" x="0.0" y="148" width="115" height="30"/>
                                         <state key="normal" title="  Voice Settings  "/>
                                         <connections>
                                             <segue destination="u1J-3U-1cH" kind="show" id="oMW-Tb-cxZ"/>
@@ -64,6 +71,7 @@
                         <outlet property="ProgressButton" destination="al9-dG-gio" id="Cec-Y2-Lkn"/>
                         <outlet property="ViewButton" destination="6M3-f3-fEK" id="CjA-Ge-X8S"/>
                         <outlet property="VoiceSettingsButton" destination="IvW-Lg-05n" id="Arg-ae-BLp"/>
+                        <outlet property="randomButton" destination="BiA-4P-EWW" id="NrX-rU-gkb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -307,53 +315,53 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-RJ-Igd">
-                                <rect key="frame" x="-41" y="211.99999999999997" width="485" height="387.33333333333331"/>
+                                <rect key="frame" x="-41" y="211.99999999999997" width="493" height="387.33333333333331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZY-Lr-OKe">
-                                        <rect key="frame" x="0.0" y="0.0" width="485" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="493" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V0u-Kp-UR9">
-                                        <rect key="frame" x="-2" y="20.333333333333329" width="489" height="31"/>
+                                        <rect key="frame" x="-2" y="20.333333333333329" width="497" height="31"/>
                                         <connections>
                                             <action selector="pitchValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="4NI-uB-iQ6"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flS-cU-dvw">
-                                        <rect key="frame" x="0.0" y="50.333333333333336" width="485" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="50.333333333333336" width="493" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WHv-ga-wOX">
-                                        <rect key="frame" x="-2" y="70.666666666666671" width="489" height="31"/>
+                                        <rect key="frame" x="-2" y="70.666666666666671" width="497" height="31"/>
                                         <connections>
                                             <action selector="volumeValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="qAg-PS-TCj"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rl-Ck-AxR">
-                                        <rect key="frame" x="0.0" y="100.66666666666667" width="485" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="100.66666666666667" width="493" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mQa-s8-wLy">
-                                        <rect key="frame" x="-2" y="121" width="489" height="31"/>
+                                        <rect key="frame" x="-2" y="121" width="497" height="31"/>
                                         <connections>
                                             <action selector="rateValueChanged:" destination="u1J-3U-1cH" eventType="valueChanged" id="4yy-9x-YsY"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-mK-NxZ">
-                                        <rect key="frame" x="0.0" y="151" width="485" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="151" width="493" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuN-K7-qcr">
-                                        <rect key="frame" x="0.0" y="171.33333333333337" width="485" height="216"/>
+                                        <rect key="frame" x="0.0" y="171.33333333333337" width="493" height="216"/>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -661,9 +669,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YCy-EL-JFt"/>
+        <segue reference="oKY-pn-7W4"/>
         <segue reference="pwQ-gK-eZI"/>
-        <segue reference="vyO-Lq-3UJ"/>
+        <segue reference="Ch4-Sd-U34"/>
         <segue reference="QPH-UB-e4d"/>
     </inferredMetricsTieBreakers>
 </document>
